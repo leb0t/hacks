@@ -1,0 +1,2133 @@
+local G2L = {};
+
+-- StarterGui.zasettingz
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["IgnoreGuiInset"] = true;
+G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
+G2L["1"]["Name"] = [[zasettingz]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+
+-- StarterGui.zasettingz.Background
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(77, 77, 77);
+G2L["2"]["Size"] = UDim2.new(0.31894, 0, 0.36573, 0);
+G2L["2"]["Position"] = UDim2.new(0.34497, 0, 0.31667, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Name"] = [[Background]];
+
+
+-- StarterGui.zasettingz.Background.UICorner
+G2L["3"] = Instance.new("UICorner", G2L["2"]);
+G2L["3"]["CornerRadius"] = UDim.new(0, 16);
+
+
+-- StarterGui.zasettingz.Background.Up
+G2L["4"] = Instance.new("Frame", G2L["2"]);
+G2L["4"]["BorderSizePixel"] = 0;
+G2L["4"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4"]["Size"] = UDim2.new(1, 0, 0.07089, 0);
+G2L["4"]["Position"] = UDim2.new(0, 0, 0, 0);
+G2L["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4"]["Name"] = [[Up]];
+G2L["4"]["BackgroundTransparency"] = 0.85;
+
+
+-- StarterGui.zasettingz.Background.Up.UICorner
+G2L["5"] = Instance.new("UICorner", G2L["4"]);
+G2L["5"]["CornerRadius"] = UDim.new(0, 16);
+
+
+-- StarterGui.zasettingz.Background.Up.neme
+G2L["6"] = Instance.new("TextLabel", G2L["4"]);
+G2L["6"]["TextWrapped"] = true;
+G2L["6"]["TextStrokeTransparency"] = 0;
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["TextScaled"] = true;
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["TextSize"] = 14;
+G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["BackgroundTransparency"] = 1;
+G2L["6"]["Size"] = UDim2.new(0.32677, 0, 1, 0);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Text"] = [[Universal Hacks]];
+G2L["6"]["Name"] = [[neme]];
+
+
+-- StarterGui.zasettingz.Background.Up.Ver
+G2L["7"] = Instance.new("TextLabel", G2L["4"]);
+G2L["7"]["TextWrapped"] = true;
+G2L["7"]["TextStrokeTransparency"] = 0;
+G2L["7"]["BorderSizePixel"] = 0;
+G2L["7"]["TextScaled"] = true;
+G2L["7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7"]["TextSize"] = 14;
+G2L["7"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["7"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7"]["BackgroundTransparency"] = 1;
+G2L["7"]["Size"] = UDim2.new(0.32677, 0, 1, 0);
+G2L["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7"]["Text"] = [[Alpha.1]];
+G2L["7"]["Name"] = [[Ver]];
+G2L["7"]["Position"] = UDim2.new(0.6274, 0, -0.03571, 0);
+
+
+-- StarterGui.zasettingz.Background.AIM
+G2L["8"] = Instance.new("Frame", G2L["2"]);
+G2L["8"]["BorderSizePixel"] = 0;
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8"]["Size"] = UDim2.new(0.99992, 0, 0.81268, 0);
+G2L["8"]["Position"] = UDim2.new(0, 0, 0.13953, 0);
+G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["Name"] = [[AIM]];
+G2L["8"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.AIM.Team
+G2L["9"] = Instance.new("TextLabel", G2L["8"]);
+G2L["9"]["TextWrapped"] = true;
+G2L["9"]["TextStrokeTransparency"] = 0;
+G2L["9"]["BorderSizePixel"] = 0;
+G2L["9"]["TextScaled"] = true;
+G2L["9"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9"]["TextSize"] = 14;
+G2L["9"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["9"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9"]["BackgroundTransparency"] = 1;
+G2L["9"]["Size"] = UDim2.new(0.3268, 0, 0.09346, 0);
+G2L["9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9"]["Text"] = [[Team Check]];
+G2L["9"]["Name"] = [[Team]];
+G2L["9"]["Position"] = UDim2.new(0.02288, 0, 0.08723, 0);
+
+
+-- StarterGui.zasettingz.Background.AIM.Team.OFF
+G2L["a"] = Instance.new("ImageButton", G2L["9"]);
+G2L["a"]["BorderSizePixel"] = 0;
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["a"]["Size"] = UDim2.new(0.115, 0, 0.8, 0);
+G2L["a"]["BackgroundTransparency"] = 1;
+G2L["a"]["Name"] = [[OFF]];
+G2L["a"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["a"]["Position"] = UDim2.new(1.1, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.AIM.Team.OFF.UIAspectRatioConstraint
+G2L["b"] = Instance.new("UIAspectRatioConstraint", G2L["a"]);
+G2L["b"]["DominantAxis"] = Enum.DominantAxis.Height;
+
+
+-- StarterGui.zasettingz.Background.AIM.Team.OFF.Image
+G2L["c"] = Instance.new("Frame", G2L["a"]);
+G2L["c"]["ZIndex"] = 2;
+G2L["c"]["BorderSizePixel"] = 0;
+G2L["c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["c"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["c"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["c"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["c"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["c"]["Name"] = [[Image]];
+G2L["c"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.AIM.Team.OFF.Image.ImageLabel
+G2L["d"] = Instance.new("ImageLabel", G2L["c"]);
+G2L["d"]["ZIndex"] = 2;
+G2L["d"]["BorderSizePixel"] = 0;
+G2L["d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["d"]["ImageColor3"] = Color3.fromRGB(121, 121, 121);
+G2L["d"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["d"]["Image"] = [[rbxassetid://14106963348]];
+G2L["d"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["d"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["d"]["BackgroundTransparency"] = 1;
+G2L["d"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.AIM.Team.OFF.UIStroke
+G2L["e"] = Instance.new("UIStroke", G2L["a"]);
+G2L["e"]["Thickness"] = 2;
+
+
+-- StarterGui.zasettingz.Background.AIM.Team.ON
+G2L["f"] = Instance.new("ImageButton", G2L["9"]);
+G2L["f"]["BorderSizePixel"] = 0;
+G2L["f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["f"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["f"]["Size"] = UDim2.new(0.115, 0, 0.8, 0);
+G2L["f"]["BackgroundTransparency"] = 1;
+G2L["f"]["Name"] = [[ON]];
+G2L["f"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["f"]["Position"] = UDim2.new(1.1, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.AIM.Team.ON.UIAspectRatioConstraint
+G2L["10"] = Instance.new("UIAspectRatioConstraint", G2L["f"]);
+G2L["10"]["DominantAxis"] = Enum.DominantAxis.Height;
+
+
+-- StarterGui.zasettingz.Background.AIM.Team.ON.Image
+G2L["11"] = Instance.new("Frame", G2L["f"]);
+G2L["11"]["ZIndex"] = 2;
+G2L["11"]["BorderSizePixel"] = 0;
+G2L["11"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["11"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["11"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["11"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["11"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["11"]["Name"] = [[Image]];
+G2L["11"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.AIM.Team.ON.Image.ImageLabel
+G2L["12"] = Instance.new("ImageLabel", G2L["11"]);
+G2L["12"]["ZIndex"] = 2;
+G2L["12"]["BorderSizePixel"] = 0;
+G2L["12"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["12"]["ImageColor3"] = Color3.fromRGB(99, 0, 239);
+G2L["12"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["12"]["Image"] = [[rbxassetid://14106962407]];
+G2L["12"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["12"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["12"]["BackgroundTransparency"] = 1;
+G2L["12"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.AIM.Team.ON.Image.Color2
+G2L["13"] = Instance.new("Frame", G2L["11"]);
+G2L["13"]["BorderSizePixel"] = 0;
+G2L["13"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["13"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["13"]["Size"] = UDim2.new(0.9, 0, 0.9, 0);
+G2L["13"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["13"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["13"]["Name"] = [[Color2]];
+
+
+-- StarterGui.zasettingz.Background.AIM.Team.ON.UIStroke
+G2L["14"] = Instance.new("UIStroke", G2L["f"]);
+G2L["14"]["Thickness"] = 2;
+
+
+-- StarterGui.zasettingz.Background.AIM.Wall
+G2L["15"] = Instance.new("TextLabel", G2L["8"]);
+G2L["15"]["TextWrapped"] = true;
+G2L["15"]["TextStrokeTransparency"] = 0;
+G2L["15"]["BorderSizePixel"] = 0;
+G2L["15"]["TextScaled"] = true;
+G2L["15"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["15"]["TextSize"] = 14;
+G2L["15"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["15"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["15"]["BackgroundTransparency"] = 1;
+G2L["15"]["Size"] = UDim2.new(0.3268, 0, 0.09346, 0);
+G2L["15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["15"]["Text"] = [[Wall Check]];
+G2L["15"]["Name"] = [[Wall]];
+G2L["15"]["Position"] = UDim2.new(0.02288, 0, 0.39564, 0);
+
+
+-- StarterGui.zasettingz.Background.AIM.Wall.OFF
+G2L["16"] = Instance.new("ImageButton", G2L["15"]);
+G2L["16"]["BorderSizePixel"] = 0;
+G2L["16"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["16"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["16"]["Size"] = UDim2.new(0.115, 0, 0.8, 0);
+G2L["16"]["BackgroundTransparency"] = 1;
+G2L["16"]["Name"] = [[OFF]];
+G2L["16"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["16"]["Position"] = UDim2.new(1.1, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.AIM.Wall.OFF.UIAspectRatioConstraint
+G2L["17"] = Instance.new("UIAspectRatioConstraint", G2L["16"]);
+G2L["17"]["DominantAxis"] = Enum.DominantAxis.Height;
+
+
+-- StarterGui.zasettingz.Background.AIM.Wall.OFF.Image
+G2L["18"] = Instance.new("Frame", G2L["16"]);
+G2L["18"]["ZIndex"] = 2;
+G2L["18"]["BorderSizePixel"] = 0;
+G2L["18"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["18"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["18"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["18"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["18"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["18"]["Name"] = [[Image]];
+G2L["18"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.AIM.Wall.OFF.Image.ImageLabel
+G2L["19"] = Instance.new("ImageLabel", G2L["18"]);
+G2L["19"]["ZIndex"] = 2;
+G2L["19"]["BorderSizePixel"] = 0;
+G2L["19"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["19"]["ImageColor3"] = Color3.fromRGB(121, 121, 121);
+G2L["19"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["19"]["Image"] = [[rbxassetid://14106963348]];
+G2L["19"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["19"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["19"]["BackgroundTransparency"] = 1;
+G2L["19"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.AIM.Wall.OFF.UIStroke
+G2L["1a"] = Instance.new("UIStroke", G2L["16"]);
+G2L["1a"]["Thickness"] = 2;
+
+
+-- StarterGui.zasettingz.Background.AIM.Wall.ON
+G2L["1b"] = Instance.new("ImageButton", G2L["15"]);
+G2L["1b"]["BorderSizePixel"] = 0;
+G2L["1b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1b"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["1b"]["Size"] = UDim2.new(0.115, 0, 0.8, 0);
+G2L["1b"]["BackgroundTransparency"] = 1;
+G2L["1b"]["Name"] = [[ON]];
+G2L["1b"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["1b"]["Position"] = UDim2.new(1.1, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.AIM.Wall.ON.UIAspectRatioConstraint
+G2L["1c"] = Instance.new("UIAspectRatioConstraint", G2L["1b"]);
+G2L["1c"]["DominantAxis"] = Enum.DominantAxis.Height;
+
+
+-- StarterGui.zasettingz.Background.AIM.Wall.ON.Image
+G2L["1d"] = Instance.new("Frame", G2L["1b"]);
+G2L["1d"]["ZIndex"] = 2;
+G2L["1d"]["BorderSizePixel"] = 0;
+G2L["1d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1d"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["1d"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["1d"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["1d"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["1d"]["Name"] = [[Image]];
+G2L["1d"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.AIM.Wall.ON.Image.ImageLabel
+G2L["1e"] = Instance.new("ImageLabel", G2L["1d"]);
+G2L["1e"]["ZIndex"] = 2;
+G2L["1e"]["BorderSizePixel"] = 0;
+G2L["1e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1e"]["ImageColor3"] = Color3.fromRGB(99, 0, 239);
+G2L["1e"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["1e"]["Image"] = [[rbxassetid://14106962407]];
+G2L["1e"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["1e"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["1e"]["BackgroundTransparency"] = 1;
+G2L["1e"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.AIM.Wall.ON.Image.Color2
+G2L["1f"] = Instance.new("Frame", G2L["1d"]);
+G2L["1f"]["BorderSizePixel"] = 0;
+G2L["1f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1f"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["1f"]["Size"] = UDim2.new(0.9, 0, 0.9, 0);
+G2L["1f"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["1f"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["1f"]["Name"] = [[Color2]];
+
+
+-- StarterGui.zasettingz.Background.AIM.Wall.ON.UIStroke
+G2L["20"] = Instance.new("UIStroke", G2L["1b"]);
+G2L["20"]["Thickness"] = 2;
+
+
+-- StarterGui.zasettingz.Background.AIM.Pred
+G2L["21"] = Instance.new("TextLabel", G2L["8"]);
+G2L["21"]["TextWrapped"] = true;
+G2L["21"]["TextStrokeTransparency"] = 0;
+G2L["21"]["BorderSizePixel"] = 0;
+G2L["21"]["TextScaled"] = true;
+G2L["21"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["21"]["TextSize"] = 14;
+G2L["21"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["21"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["21"]["BackgroundTransparency"] = 1;
+G2L["21"]["Size"] = UDim2.new(0.3268, 0, 0.09346, 0);
+G2L["21"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["21"]["Text"] = [[Prediction]];
+G2L["21"]["Name"] = [[Pred]];
+G2L["21"]["Position"] = UDim2.new(0.02288, 0, 0.74766, 0);
+
+
+-- StarterGui.zasettingz.Background.AIM.Pred.OFF
+G2L["22"] = Instance.new("ImageButton", G2L["21"]);
+G2L["22"]["BorderSizePixel"] = 0;
+G2L["22"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["22"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["22"]["Size"] = UDim2.new(0.115, 0, 0.8, 0);
+G2L["22"]["BackgroundTransparency"] = 1;
+G2L["22"]["Name"] = [[OFF]];
+G2L["22"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["22"]["Position"] = UDim2.new(1.1, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.AIM.Pred.OFF.UIAspectRatioConstraint
+G2L["23"] = Instance.new("UIAspectRatioConstraint", G2L["22"]);
+G2L["23"]["DominantAxis"] = Enum.DominantAxis.Height;
+
+
+-- StarterGui.zasettingz.Background.AIM.Pred.OFF.Image
+G2L["24"] = Instance.new("Frame", G2L["22"]);
+G2L["24"]["ZIndex"] = 2;
+G2L["24"]["BorderSizePixel"] = 0;
+G2L["24"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["24"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["24"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["24"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["24"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["24"]["Name"] = [[Image]];
+G2L["24"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.AIM.Pred.OFF.Image.ImageLabel
+G2L["25"] = Instance.new("ImageLabel", G2L["24"]);
+G2L["25"]["ZIndex"] = 2;
+G2L["25"]["BorderSizePixel"] = 0;
+G2L["25"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["25"]["ImageColor3"] = Color3.fromRGB(121, 121, 121);
+G2L["25"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["25"]["Image"] = [[rbxassetid://14106963348]];
+G2L["25"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["25"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["25"]["BackgroundTransparency"] = 1;
+G2L["25"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.AIM.Pred.OFF.UIStroke
+G2L["26"] = Instance.new("UIStroke", G2L["22"]);
+G2L["26"]["Thickness"] = 2;
+
+
+-- StarterGui.zasettingz.Background.AIM.Pred.ON
+G2L["27"] = Instance.new("ImageButton", G2L["21"]);
+G2L["27"]["BorderSizePixel"] = 0;
+G2L["27"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["27"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["27"]["Size"] = UDim2.new(0.115, 0, 0.8, 0);
+G2L["27"]["BackgroundTransparency"] = 1;
+G2L["27"]["Name"] = [[ON]];
+G2L["27"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["27"]["Position"] = UDim2.new(1.1, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.AIM.Pred.ON.UIAspectRatioConstraint
+G2L["28"] = Instance.new("UIAspectRatioConstraint", G2L["27"]);
+G2L["28"]["DominantAxis"] = Enum.DominantAxis.Height;
+
+
+-- StarterGui.zasettingz.Background.AIM.Pred.ON.Image
+G2L["29"] = Instance.new("Frame", G2L["27"]);
+G2L["29"]["ZIndex"] = 2;
+G2L["29"]["BorderSizePixel"] = 0;
+G2L["29"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["29"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["29"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["29"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["29"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["29"]["Name"] = [[Image]];
+G2L["29"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.AIM.Pred.ON.Image.ImageLabel
+G2L["2a"] = Instance.new("ImageLabel", G2L["29"]);
+G2L["2a"]["ZIndex"] = 2;
+G2L["2a"]["BorderSizePixel"] = 0;
+G2L["2a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2a"]["ImageColor3"] = Color3.fromRGB(99, 0, 239);
+G2L["2a"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["2a"]["Image"] = [[rbxassetid://14106962407]];
+G2L["2a"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["2a"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["2a"]["BackgroundTransparency"] = 1;
+G2L["2a"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.AIM.Pred.ON.Image.Color2
+G2L["2b"] = Instance.new("Frame", G2L["29"]);
+G2L["2b"]["BorderSizePixel"] = 0;
+G2L["2b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2b"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["2b"]["Size"] = UDim2.new(0.9, 0, 0.9, 0);
+G2L["2b"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["2b"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["2b"]["Name"] = [[Color2]];
+
+
+-- StarterGui.zasettingz.Background.AIM.Pred.ON.UIStroke
+G2L["2c"] = Instance.new("UIStroke", G2L["27"]);
+G2L["2c"]["Thickness"] = 2;
+
+
+-- StarterGui.zasettingz.Background.AIM.MAN
+G2L["2d"] = Instance.new("TextLabel", G2L["8"]);
+G2L["2d"]["TextWrapped"] = true;
+G2L["2d"]["TextStrokeTransparency"] = 0;
+G2L["2d"]["BorderSizePixel"] = 0;
+G2L["2d"]["TextScaled"] = true;
+G2L["2d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2d"]["TextSize"] = 14;
+G2L["2d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2d"]["BackgroundTransparency"] = 0.5;
+G2L["2d"]["Size"] = UDim2.new(0.3268, 0, 0.09346, 0);
+G2L["2d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2d"]["Text"] = [[MANUAL LOCK]];
+G2L["2d"]["Name"] = [[MAN]];
+G2L["2d"]["Position"] = UDim2.new(0.5866, 0, 0.3053, 0);
+
+
+-- StarterGui.zasettingz.Background.AIM.MAN.UICorner
+G2L["2e"] = Instance.new("UICorner", G2L["2d"]);
+G2L["2e"]["CornerRadius"] = UDim.new(0, 16);
+
+
+-- StarterGui.zasettingz.Background.AIM.MAN.TextBox
+G2L["2f"] = Instance.new("TextBox", G2L["2d"]);
+G2L["2f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2f"]["PlaceholderColor3"] = Color3.fromRGB(77, 77, 77);
+G2L["2f"]["BorderSizePixel"] = 0;
+G2L["2f"]["TextSize"] = 14;
+G2L["2f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2f"]["PlaceholderText"] = [[USERNAME - KEEP BLANK TO DISABLE]];
+G2L["2f"]["Size"] = UDim2.new(1, 0, 1.13333, 0);
+G2L["2f"]["Position"] = UDim2.new(0, 0, 1.4, 0);
+G2L["2f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2f"]["Text"] = [[]];
+G2L["2f"]["BackgroundTransparency"] = 0.5;
+
+
+-- StarterGui.zasettingz.Background.Tabs
+G2L["30"] = Instance.new("Frame", G2L["2"]);
+G2L["30"]["BorderSizePixel"] = 0;
+G2L["30"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["30"]["Size"] = UDim2.new(1, 0, 0.07089, 0);
+G2L["30"]["Position"] = UDim2.new(0, 0, 0.06836, 0);
+G2L["30"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["30"]["Name"] = [[Tabs]];
+G2L["30"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.Tabs.ESP
+G2L["31"] = Instance.new("TextButton", G2L["30"]);
+G2L["31"]["TextWrapped"] = true;
+G2L["31"]["TextStrokeTransparency"] = 0;
+G2L["31"]["BorderSizePixel"] = 0;
+G2L["31"]["TextSize"] = 14;
+G2L["31"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["31"]["TextScaled"] = true;
+G2L["31"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["31"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["31"]["Size"] = UDim2.new(0.5, 0, 1, 0);
+G2L["31"]["BackgroundTransparency"] = 0.9;
+G2L["31"]["Name"] = [[ESP]];
+G2L["31"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["31"]["Text"] = [[ESP]];
+
+
+-- StarterGui.zasettingz.Background.Tabs.AIM
+G2L["32"] = Instance.new("TextButton", G2L["30"]);
+G2L["32"]["TextWrapped"] = true;
+G2L["32"]["TextStrokeTransparency"] = 0;
+G2L["32"]["BorderSizePixel"] = 0;
+G2L["32"]["TextSize"] = 14;
+G2L["32"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["32"]["TextScaled"] = true;
+G2L["32"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["32"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["32"]["Size"] = UDim2.new(0.5, 0, 1, 0);
+G2L["32"]["BackgroundTransparency"] = 0.9;
+G2L["32"]["Name"] = [[AIM]];
+G2L["32"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["32"]["Text"] = [[AIM]];
+G2L["32"]["Position"] = UDim2.new(0.5, 0, 0, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP
+G2L["33"] = Instance.new("Frame", G2L["2"]);
+G2L["33"]["Visible"] = false;
+G2L["33"]["BorderSizePixel"] = 0;
+G2L["33"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["33"]["Size"] = UDim2.new(0.99992, 0, 0.81268, 0);
+G2L["33"]["Position"] = UDim2.new(0, 0, 0.13953, 0);
+G2L["33"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["33"]["Name"] = [[ESP]];
+G2L["33"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.ESP.Health
+G2L["34"] = Instance.new("TextLabel", G2L["33"]);
+G2L["34"]["TextWrapped"] = true;
+G2L["34"]["TextStrokeTransparency"] = 0;
+G2L["34"]["BorderSizePixel"] = 0;
+G2L["34"]["TextScaled"] = true;
+G2L["34"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["34"]["TextSize"] = 14;
+G2L["34"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["34"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["34"]["BackgroundTransparency"] = 1;
+G2L["34"]["Size"] = UDim2.new(0.3268, 0, 0.09346, 0);
+G2L["34"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["34"]["Text"] = [[ESP Health]];
+G2L["34"]["Name"] = [[Health]];
+G2L["34"]["Position"] = UDim2.new(0.02288, 0, 0.74766, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Health.OFF
+G2L["35"] = Instance.new("ImageButton", G2L["34"]);
+G2L["35"]["BorderSizePixel"] = 0;
+G2L["35"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["35"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["35"]["Size"] = UDim2.new(0.115, 0, 0.8, 0);
+G2L["35"]["BackgroundTransparency"] = 1;
+G2L["35"]["Name"] = [[OFF]];
+G2L["35"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["35"]["Position"] = UDim2.new(1.1, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Health.OFF.UIAspectRatioConstraint
+G2L["36"] = Instance.new("UIAspectRatioConstraint", G2L["35"]);
+G2L["36"]["DominantAxis"] = Enum.DominantAxis.Height;
+
+
+-- StarterGui.zasettingz.Background.ESP.Health.OFF.Image
+G2L["37"] = Instance.new("Frame", G2L["35"]);
+G2L["37"]["ZIndex"] = 2;
+G2L["37"]["BorderSizePixel"] = 0;
+G2L["37"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["37"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["37"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["37"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["37"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["37"]["Name"] = [[Image]];
+G2L["37"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.ESP.Health.OFF.Image.ImageLabel
+G2L["38"] = Instance.new("ImageLabel", G2L["37"]);
+G2L["38"]["ZIndex"] = 2;
+G2L["38"]["BorderSizePixel"] = 0;
+G2L["38"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["38"]["ImageColor3"] = Color3.fromRGB(121, 121, 121);
+G2L["38"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["38"]["Image"] = [[rbxassetid://14106963348]];
+G2L["38"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["38"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["38"]["BackgroundTransparency"] = 1;
+G2L["38"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Health.OFF.UIStroke
+G2L["39"] = Instance.new("UIStroke", G2L["35"]);
+G2L["39"]["Thickness"] = 2;
+
+
+-- StarterGui.zasettingz.Background.ESP.Health.ON
+G2L["3a"] = Instance.new("ImageButton", G2L["34"]);
+G2L["3a"]["BorderSizePixel"] = 0;
+G2L["3a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3a"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["3a"]["Size"] = UDim2.new(0.115, 0, 0.8, 0);
+G2L["3a"]["BackgroundTransparency"] = 1;
+G2L["3a"]["Name"] = [[ON]];
+G2L["3a"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["3a"]["Position"] = UDim2.new(1.1, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Health.ON.UIAspectRatioConstraint
+G2L["3b"] = Instance.new("UIAspectRatioConstraint", G2L["3a"]);
+G2L["3b"]["DominantAxis"] = Enum.DominantAxis.Height;
+
+
+-- StarterGui.zasettingz.Background.ESP.Health.ON.Image
+G2L["3c"] = Instance.new("Frame", G2L["3a"]);
+G2L["3c"]["ZIndex"] = 2;
+G2L["3c"]["BorderSizePixel"] = 0;
+G2L["3c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3c"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["3c"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["3c"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["3c"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["3c"]["Name"] = [[Image]];
+G2L["3c"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.ESP.Health.ON.Image.ImageLabel
+G2L["3d"] = Instance.new("ImageLabel", G2L["3c"]);
+G2L["3d"]["ZIndex"] = 2;
+G2L["3d"]["BorderSizePixel"] = 0;
+G2L["3d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3d"]["ImageColor3"] = Color3.fromRGB(99, 0, 239);
+G2L["3d"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["3d"]["Image"] = [[rbxassetid://14106962407]];
+G2L["3d"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["3d"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["3d"]["BackgroundTransparency"] = 1;
+G2L["3d"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Health.ON.Image.Color2
+G2L["3e"] = Instance.new("Frame", G2L["3c"]);
+G2L["3e"]["BorderSizePixel"] = 0;
+G2L["3e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3e"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["3e"]["Size"] = UDim2.new(0.9, 0, 0.9, 0);
+G2L["3e"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["3e"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["3e"]["Name"] = [[Color2]];
+
+
+-- StarterGui.zasettingz.Background.ESP.Health.ON.UIStroke
+G2L["3f"] = Instance.new("UIStroke", G2L["3a"]);
+G2L["3f"]["Thickness"] = 2;
+
+
+-- StarterGui.zasettingz.Background.ESP.Box
+G2L["40"] = Instance.new("TextLabel", G2L["33"]);
+G2L["40"]["TextWrapped"] = true;
+G2L["40"]["TextStrokeTransparency"] = 0;
+G2L["40"]["BorderSizePixel"] = 0;
+G2L["40"]["TextScaled"] = true;
+G2L["40"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["40"]["TextSize"] = 14;
+G2L["40"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["40"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["40"]["BackgroundTransparency"] = 1;
+G2L["40"]["Size"] = UDim2.new(0.3268, 0, 0.09346, 0);
+G2L["40"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["40"]["Text"] = [[ESP Box]];
+G2L["40"]["Name"] = [[Box]];
+G2L["40"]["Position"] = UDim2.new(0.02288, 0, 0.08723, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Box.OFF
+G2L["41"] = Instance.new("ImageButton", G2L["40"]);
+G2L["41"]["BorderSizePixel"] = 0;
+G2L["41"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["41"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["41"]["Size"] = UDim2.new(0.115, 0, 0.8, 0);
+G2L["41"]["BackgroundTransparency"] = 1;
+G2L["41"]["Name"] = [[OFF]];
+G2L["41"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["41"]["Position"] = UDim2.new(1.1, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Box.OFF.UIAspectRatioConstraint
+G2L["42"] = Instance.new("UIAspectRatioConstraint", G2L["41"]);
+G2L["42"]["DominantAxis"] = Enum.DominantAxis.Height;
+
+
+-- StarterGui.zasettingz.Background.ESP.Box.OFF.Image
+G2L["43"] = Instance.new("Frame", G2L["41"]);
+G2L["43"]["ZIndex"] = 2;
+G2L["43"]["BorderSizePixel"] = 0;
+G2L["43"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["43"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["43"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["43"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["43"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["43"]["Name"] = [[Image]];
+G2L["43"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.ESP.Box.OFF.Image.ImageLabel
+G2L["44"] = Instance.new("ImageLabel", G2L["43"]);
+G2L["44"]["ZIndex"] = 2;
+G2L["44"]["BorderSizePixel"] = 0;
+G2L["44"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["44"]["ImageColor3"] = Color3.fromRGB(121, 121, 121);
+G2L["44"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["44"]["Image"] = [[rbxassetid://14106963348]];
+G2L["44"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["44"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["44"]["BackgroundTransparency"] = 1;
+G2L["44"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Box.OFF.UIStroke
+G2L["45"] = Instance.new("UIStroke", G2L["41"]);
+G2L["45"]["Thickness"] = 2;
+
+
+-- StarterGui.zasettingz.Background.ESP.Box.ON
+G2L["46"] = Instance.new("ImageButton", G2L["40"]);
+G2L["46"]["BorderSizePixel"] = 0;
+G2L["46"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["46"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["46"]["Size"] = UDim2.new(0.115, 0, 0.8, 0);
+G2L["46"]["BackgroundTransparency"] = 1;
+G2L["46"]["Name"] = [[ON]];
+G2L["46"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["46"]["Position"] = UDim2.new(1.1, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Box.ON.UIAspectRatioConstraint
+G2L["47"] = Instance.new("UIAspectRatioConstraint", G2L["46"]);
+G2L["47"]["DominantAxis"] = Enum.DominantAxis.Height;
+
+
+-- StarterGui.zasettingz.Background.ESP.Box.ON.Image
+G2L["48"] = Instance.new("Frame", G2L["46"]);
+G2L["48"]["ZIndex"] = 2;
+G2L["48"]["BorderSizePixel"] = 0;
+G2L["48"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["48"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["48"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["48"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["48"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["48"]["Name"] = [[Image]];
+G2L["48"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.ESP.Box.ON.Image.ImageLabel
+G2L["49"] = Instance.new("ImageLabel", G2L["48"]);
+G2L["49"]["ZIndex"] = 2;
+G2L["49"]["BorderSizePixel"] = 0;
+G2L["49"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["49"]["ImageColor3"] = Color3.fromRGB(99, 0, 239);
+G2L["49"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["49"]["Image"] = [[rbxassetid://14106962407]];
+G2L["49"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["49"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["49"]["BackgroundTransparency"] = 1;
+G2L["49"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Box.ON.Image.Color2
+G2L["4a"] = Instance.new("Frame", G2L["48"]);
+G2L["4a"]["BorderSizePixel"] = 0;
+G2L["4a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4a"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["4a"]["Size"] = UDim2.new(0.9, 0, 0.9, 0);
+G2L["4a"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["4a"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["4a"]["Name"] = [[Color2]];
+
+
+-- StarterGui.zasettingz.Background.ESP.Box.ON.UIStroke
+G2L["4b"] = Instance.new("UIStroke", G2L["46"]);
+G2L["4b"]["Thickness"] = 2;
+
+
+-- StarterGui.zasettingz.Background.ESP.nme
+G2L["4c"] = Instance.new("TextLabel", G2L["33"]);
+G2L["4c"]["TextWrapped"] = true;
+G2L["4c"]["TextStrokeTransparency"] = 0;
+G2L["4c"]["BorderSizePixel"] = 0;
+G2L["4c"]["TextScaled"] = true;
+G2L["4c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4c"]["TextSize"] = 14;
+G2L["4c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4c"]["BackgroundTransparency"] = 1;
+G2L["4c"]["Size"] = UDim2.new(0.3268, 0, 0.09346, 0);
+G2L["4c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4c"]["Text"] = [[ESP PlayerName]];
+G2L["4c"]["Name"] = [[nme]];
+G2L["4c"]["Position"] = UDim2.new(0.5866, 0, 0.08723, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.nme.OFF
+G2L["4d"] = Instance.new("ImageButton", G2L["4c"]);
+G2L["4d"]["BorderSizePixel"] = 0;
+G2L["4d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4d"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["4d"]["Size"] = UDim2.new(0.115, 0, 0.8, 0);
+G2L["4d"]["BackgroundTransparency"] = 1;
+G2L["4d"]["Name"] = [[OFF]];
+G2L["4d"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["4d"]["Position"] = UDim2.new(1.1, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.nme.OFF.UIAspectRatioConstraint
+G2L["4e"] = Instance.new("UIAspectRatioConstraint", G2L["4d"]);
+G2L["4e"]["DominantAxis"] = Enum.DominantAxis.Height;
+
+
+-- StarterGui.zasettingz.Background.ESP.nme.OFF.Image
+G2L["4f"] = Instance.new("Frame", G2L["4d"]);
+G2L["4f"]["ZIndex"] = 2;
+G2L["4f"]["BorderSizePixel"] = 0;
+G2L["4f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4f"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["4f"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["4f"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["4f"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["4f"]["Name"] = [[Image]];
+G2L["4f"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.ESP.nme.OFF.Image.ImageLabel
+G2L["50"] = Instance.new("ImageLabel", G2L["4f"]);
+G2L["50"]["ZIndex"] = 2;
+G2L["50"]["BorderSizePixel"] = 0;
+G2L["50"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["50"]["ImageColor3"] = Color3.fromRGB(121, 121, 121);
+G2L["50"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["50"]["Image"] = [[rbxassetid://14106963348]];
+G2L["50"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["50"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["50"]["BackgroundTransparency"] = 1;
+G2L["50"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.nme.OFF.UIStroke
+G2L["51"] = Instance.new("UIStroke", G2L["4d"]);
+G2L["51"]["Thickness"] = 2;
+
+
+-- StarterGui.zasettingz.Background.ESP.nme.ON
+G2L["52"] = Instance.new("ImageButton", G2L["4c"]);
+G2L["52"]["BorderSizePixel"] = 0;
+G2L["52"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["52"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["52"]["Size"] = UDim2.new(0.115, 0, 0.8, 0);
+G2L["52"]["BackgroundTransparency"] = 1;
+G2L["52"]["Name"] = [[ON]];
+G2L["52"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["52"]["Position"] = UDim2.new(1.1, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.nme.ON.UIAspectRatioConstraint
+G2L["53"] = Instance.new("UIAspectRatioConstraint", G2L["52"]);
+G2L["53"]["DominantAxis"] = Enum.DominantAxis.Height;
+
+
+-- StarterGui.zasettingz.Background.ESP.nme.ON.Image
+G2L["54"] = Instance.new("Frame", G2L["52"]);
+G2L["54"]["ZIndex"] = 2;
+G2L["54"]["BorderSizePixel"] = 0;
+G2L["54"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["54"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["54"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["54"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["54"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["54"]["Name"] = [[Image]];
+G2L["54"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.ESP.nme.ON.Image.ImageLabel
+G2L["55"] = Instance.new("ImageLabel", G2L["54"]);
+G2L["55"]["ZIndex"] = 2;
+G2L["55"]["BorderSizePixel"] = 0;
+G2L["55"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["55"]["ImageColor3"] = Color3.fromRGB(99, 0, 239);
+G2L["55"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["55"]["Image"] = [[rbxassetid://14106962407]];
+G2L["55"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["55"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["55"]["BackgroundTransparency"] = 1;
+G2L["55"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.nme.ON.Image.Color2
+G2L["56"] = Instance.new("Frame", G2L["54"]);
+G2L["56"]["BorderSizePixel"] = 0;
+G2L["56"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["56"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["56"]["Size"] = UDim2.new(0.9, 0, 0.9, 0);
+G2L["56"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["56"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["56"]["Name"] = [[Color2]];
+
+
+-- StarterGui.zasettingz.Background.ESP.nme.ON.UIStroke
+G2L["57"] = Instance.new("UIStroke", G2L["52"]);
+G2L["57"]["Thickness"] = 2;
+
+
+-- StarterGui.zasettingz.Background.ESP.Plr
+G2L["58"] = Instance.new("TextLabel", G2L["33"]);
+G2L["58"]["TextWrapped"] = true;
+G2L["58"]["TextStrokeTransparency"] = 0;
+G2L["58"]["BorderSizePixel"] = 0;
+G2L["58"]["TextScaled"] = true;
+G2L["58"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["58"]["TextSize"] = 14;
+G2L["58"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["58"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["58"]["BackgroundTransparency"] = 1;
+G2L["58"]["Size"] = UDim2.new(0.3268, 0, 0.09346, 0);
+G2L["58"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["58"]["Text"] = [[ESP PlayerOutline]];
+G2L["58"]["Name"] = [[Plr]];
+G2L["58"]["Position"] = UDim2.new(0.02288, 0, 0.3053, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Plr.OFF
+G2L["59"] = Instance.new("ImageButton", G2L["58"]);
+G2L["59"]["BorderSizePixel"] = 0;
+G2L["59"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["59"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["59"]["Size"] = UDim2.new(0.115, 0, 0.8, 0);
+G2L["59"]["BackgroundTransparency"] = 1;
+G2L["59"]["Name"] = [[OFF]];
+G2L["59"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["59"]["Position"] = UDim2.new(1.1, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Plr.OFF.UIAspectRatioConstraint
+G2L["5a"] = Instance.new("UIAspectRatioConstraint", G2L["59"]);
+G2L["5a"]["DominantAxis"] = Enum.DominantAxis.Height;
+
+
+-- StarterGui.zasettingz.Background.ESP.Plr.OFF.Image
+G2L["5b"] = Instance.new("Frame", G2L["59"]);
+G2L["5b"]["ZIndex"] = 2;
+G2L["5b"]["BorderSizePixel"] = 0;
+G2L["5b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5b"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["5b"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["5b"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["5b"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["5b"]["Name"] = [[Image]];
+G2L["5b"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.ESP.Plr.OFF.Image.ImageLabel
+G2L["5c"] = Instance.new("ImageLabel", G2L["5b"]);
+G2L["5c"]["ZIndex"] = 2;
+G2L["5c"]["BorderSizePixel"] = 0;
+G2L["5c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5c"]["ImageColor3"] = Color3.fromRGB(121, 121, 121);
+G2L["5c"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["5c"]["Image"] = [[rbxassetid://14106963348]];
+G2L["5c"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["5c"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["5c"]["BackgroundTransparency"] = 1;
+G2L["5c"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Plr.OFF.UIStroke
+G2L["5d"] = Instance.new("UIStroke", G2L["59"]);
+G2L["5d"]["Thickness"] = 2;
+
+
+-- StarterGui.zasettingz.Background.ESP.Plr.ON
+G2L["5e"] = Instance.new("ImageButton", G2L["58"]);
+G2L["5e"]["BorderSizePixel"] = 0;
+G2L["5e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5e"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["5e"]["Size"] = UDim2.new(0.115, 0, 0.8, 0);
+G2L["5e"]["BackgroundTransparency"] = 1;
+G2L["5e"]["Name"] = [[ON]];
+G2L["5e"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["5e"]["Position"] = UDim2.new(1.1, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Plr.ON.UIAspectRatioConstraint
+G2L["5f"] = Instance.new("UIAspectRatioConstraint", G2L["5e"]);
+G2L["5f"]["DominantAxis"] = Enum.DominantAxis.Height;
+
+
+-- StarterGui.zasettingz.Background.ESP.Plr.ON.Image
+G2L["60"] = Instance.new("Frame", G2L["5e"]);
+G2L["60"]["ZIndex"] = 2;
+G2L["60"]["BorderSizePixel"] = 0;
+G2L["60"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["60"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["60"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["60"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["60"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["60"]["Name"] = [[Image]];
+G2L["60"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.ESP.Plr.ON.Image.ImageLabel
+G2L["61"] = Instance.new("ImageLabel", G2L["60"]);
+G2L["61"]["ZIndex"] = 2;
+G2L["61"]["BorderSizePixel"] = 0;
+G2L["61"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["61"]["ImageColor3"] = Color3.fromRGB(99, 0, 239);
+G2L["61"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["61"]["Image"] = [[rbxassetid://14106962407]];
+G2L["61"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["61"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["61"]["BackgroundTransparency"] = 1;
+G2L["61"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Plr.ON.Image.Color2
+G2L["62"] = Instance.new("Frame", G2L["60"]);
+G2L["62"]["BorderSizePixel"] = 0;
+G2L["62"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["62"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["62"]["Size"] = UDim2.new(0.9, 0, 0.9, 0);
+G2L["62"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["62"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["62"]["Name"] = [[Color2]];
+
+
+-- StarterGui.zasettingz.Background.ESP.Plr.ON.UIStroke
+G2L["63"] = Instance.new("UIStroke", G2L["5e"]);
+G2L["63"]["Thickness"] = 2;
+
+
+-- StarterGui.zasettingz.Background.ESP.Inf
+G2L["64"] = Instance.new("TextLabel", G2L["33"]);
+G2L["64"]["TextWrapped"] = true;
+G2L["64"]["TextStrokeTransparency"] = 0;
+G2L["64"]["BorderSizePixel"] = 0;
+G2L["64"]["TextScaled"] = true;
+G2L["64"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["64"]["TextSize"] = 14;
+G2L["64"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["64"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["64"]["BackgroundTransparency"] = 1;
+G2L["64"]["Size"] = UDim2.new(0.3268, 0, 0.09346, 0);
+G2L["64"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["64"]["Text"] = [[ESP Info]];
+G2L["64"]["Name"] = [[Inf]];
+G2L["64"]["Position"] = UDim2.new(0.02288, 0, 0.53271, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Inf.OFF
+G2L["65"] = Instance.new("ImageButton", G2L["64"]);
+G2L["65"]["BorderSizePixel"] = 0;
+G2L["65"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["65"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["65"]["Size"] = UDim2.new(0.115, 0, 0.8, 0);
+G2L["65"]["BackgroundTransparency"] = 1;
+G2L["65"]["Name"] = [[OFF]];
+G2L["65"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["65"]["Position"] = UDim2.new(1.1, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Inf.OFF.UIAspectRatioConstraint
+G2L["66"] = Instance.new("UIAspectRatioConstraint", G2L["65"]);
+G2L["66"]["DominantAxis"] = Enum.DominantAxis.Height;
+
+
+-- StarterGui.zasettingz.Background.ESP.Inf.OFF.Image
+G2L["67"] = Instance.new("Frame", G2L["65"]);
+G2L["67"]["ZIndex"] = 2;
+G2L["67"]["BorderSizePixel"] = 0;
+G2L["67"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["67"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["67"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["67"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["67"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["67"]["Name"] = [[Image]];
+G2L["67"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.ESP.Inf.OFF.Image.ImageLabel
+G2L["68"] = Instance.new("ImageLabel", G2L["67"]);
+G2L["68"]["ZIndex"] = 2;
+G2L["68"]["BorderSizePixel"] = 0;
+G2L["68"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["68"]["ImageColor3"] = Color3.fromRGB(121, 121, 121);
+G2L["68"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["68"]["Image"] = [[rbxassetid://14106963348]];
+G2L["68"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["68"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["68"]["BackgroundTransparency"] = 1;
+G2L["68"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Inf.OFF.UIStroke
+G2L["69"] = Instance.new("UIStroke", G2L["65"]);
+G2L["69"]["Thickness"] = 2;
+
+
+-- StarterGui.zasettingz.Background.ESP.Inf.ON
+G2L["6a"] = Instance.new("ImageButton", G2L["64"]);
+G2L["6a"]["BorderSizePixel"] = 0;
+G2L["6a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6a"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["6a"]["Size"] = UDim2.new(0.115, 0, 0.8, 0);
+G2L["6a"]["BackgroundTransparency"] = 1;
+G2L["6a"]["Name"] = [[ON]];
+G2L["6a"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["6a"]["Position"] = UDim2.new(1.1, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Inf.ON.UIAspectRatioConstraint
+G2L["6b"] = Instance.new("UIAspectRatioConstraint", G2L["6a"]);
+G2L["6b"]["DominantAxis"] = Enum.DominantAxis.Height;
+
+
+-- StarterGui.zasettingz.Background.ESP.Inf.ON.Image
+G2L["6c"] = Instance.new("Frame", G2L["6a"]);
+G2L["6c"]["ZIndex"] = 2;
+G2L["6c"]["BorderSizePixel"] = 0;
+G2L["6c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6c"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["6c"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["6c"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["6c"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["6c"]["Name"] = [[Image]];
+G2L["6c"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.ESP.Inf.ON.Image.ImageLabel
+G2L["6d"] = Instance.new("ImageLabel", G2L["6c"]);
+G2L["6d"]["ZIndex"] = 2;
+G2L["6d"]["BorderSizePixel"] = 0;
+G2L["6d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6d"]["ImageColor3"] = Color3.fromRGB(99, 0, 239);
+G2L["6d"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["6d"]["Image"] = [[rbxassetid://14106962407]];
+G2L["6d"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["6d"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["6d"]["BackgroundTransparency"] = 1;
+G2L["6d"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.Inf.ON.Image.Color2
+G2L["6e"] = Instance.new("Frame", G2L["6c"]);
+G2L["6e"]["BorderSizePixel"] = 0;
+G2L["6e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6e"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["6e"]["Size"] = UDim2.new(0.9, 0, 0.9, 0);
+G2L["6e"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["6e"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["6e"]["Name"] = [[Color2]];
+
+
+-- StarterGui.zasettingz.Background.ESP.Inf.ON.UIStroke
+G2L["6f"] = Instance.new("UIStroke", G2L["6a"]);
+G2L["6f"]["Thickness"] = 2;
+
+
+-- StarterGui.zasettingz.Background.ESP.dstan
+G2L["70"] = Instance.new("TextLabel", G2L["33"]);
+G2L["70"]["TextWrapped"] = true;
+G2L["70"]["TextStrokeTransparency"] = 0;
+G2L["70"]["BorderSizePixel"] = 0;
+G2L["70"]["TextScaled"] = true;
+G2L["70"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["70"]["TextSize"] = 14;
+G2L["70"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["70"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["70"]["BackgroundTransparency"] = 1;
+G2L["70"]["Size"] = UDim2.new(0.3268, 0, 0.09346, 0);
+G2L["70"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["70"]["Text"] = [[ESP Distance]];
+G2L["70"]["Name"] = [[dstan]];
+G2L["70"]["Position"] = UDim2.new(0.5866, 0, 0.30218, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.dstan.OFF
+G2L["71"] = Instance.new("ImageButton", G2L["70"]);
+G2L["71"]["BorderSizePixel"] = 0;
+G2L["71"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["71"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["71"]["Size"] = UDim2.new(0.115, 0, 0.8, 0);
+G2L["71"]["BackgroundTransparency"] = 1;
+G2L["71"]["Name"] = [[OFF]];
+G2L["71"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["71"]["Position"] = UDim2.new(1.1, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.dstan.OFF.UIAspectRatioConstraint
+G2L["72"] = Instance.new("UIAspectRatioConstraint", G2L["71"]);
+G2L["72"]["DominantAxis"] = Enum.DominantAxis.Height;
+
+
+-- StarterGui.zasettingz.Background.ESP.dstan.OFF.Image
+G2L["73"] = Instance.new("Frame", G2L["71"]);
+G2L["73"]["ZIndex"] = 2;
+G2L["73"]["BorderSizePixel"] = 0;
+G2L["73"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["73"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["73"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["73"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["73"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["73"]["Name"] = [[Image]];
+G2L["73"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.ESP.dstan.OFF.Image.ImageLabel
+G2L["74"] = Instance.new("ImageLabel", G2L["73"]);
+G2L["74"]["ZIndex"] = 2;
+G2L["74"]["BorderSizePixel"] = 0;
+G2L["74"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["74"]["ImageColor3"] = Color3.fromRGB(121, 121, 121);
+G2L["74"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["74"]["Image"] = [[rbxassetid://14106963348]];
+G2L["74"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["74"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["74"]["BackgroundTransparency"] = 1;
+G2L["74"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.dstan.OFF.UIStroke
+G2L["75"] = Instance.new("UIStroke", G2L["71"]);
+G2L["75"]["Thickness"] = 2;
+
+
+-- StarterGui.zasettingz.Background.ESP.dstan.ON
+G2L["76"] = Instance.new("ImageButton", G2L["70"]);
+G2L["76"]["BorderSizePixel"] = 0;
+G2L["76"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["76"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["76"]["Size"] = UDim2.new(0.115, 0, 0.8, 0);
+G2L["76"]["BackgroundTransparency"] = 1;
+G2L["76"]["Name"] = [[ON]];
+G2L["76"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["76"]["Position"] = UDim2.new(1.1, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.dstan.ON.UIAspectRatioConstraint
+G2L["77"] = Instance.new("UIAspectRatioConstraint", G2L["76"]);
+G2L["77"]["DominantAxis"] = Enum.DominantAxis.Height;
+
+
+-- StarterGui.zasettingz.Background.ESP.dstan.ON.Image
+G2L["78"] = Instance.new("Frame", G2L["76"]);
+G2L["78"]["ZIndex"] = 2;
+G2L["78"]["BorderSizePixel"] = 0;
+G2L["78"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["78"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["78"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["78"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["78"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["78"]["Name"] = [[Image]];
+G2L["78"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.zasettingz.Background.ESP.dstan.ON.Image.ImageLabel
+G2L["79"] = Instance.new("ImageLabel", G2L["78"]);
+G2L["79"]["ZIndex"] = 2;
+G2L["79"]["BorderSizePixel"] = 0;
+G2L["79"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["79"]["ImageColor3"] = Color3.fromRGB(99, 0, 239);
+G2L["79"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["79"]["Image"] = [[rbxassetid://14106962407]];
+G2L["79"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["79"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["79"]["BackgroundTransparency"] = 1;
+G2L["79"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+
+
+-- StarterGui.zasettingz.Background.ESP.dstan.ON.Image.Color2
+G2L["7a"] = Instance.new("Frame", G2L["78"]);
+G2L["7a"]["BorderSizePixel"] = 0;
+G2L["7a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7a"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["7a"]["Size"] = UDim2.new(0.9, 0, 0.9, 0);
+G2L["7a"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["7a"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["7a"]["Name"] = [[Color2]];
+
+
+-- StarterGui.zasettingz.Background.ESP.dstan.ON.UIStroke
+G2L["7b"] = Instance.new("UIStroke", G2L["76"]);
+G2L["7b"]["Thickness"] = 2;
+
+
+-- StarterGui.zasettingz.TextButton
+G2L["7c"] = Instance.new("TextButton", G2L["1"]);
+G2L["7c"]["TextWrapped"] = true;
+G2L["7c"]["TextStrokeTransparency"] = 0;
+G2L["7c"]["BorderSizePixel"] = 0;
+G2L["7c"]["TextSize"] = 14;
+G2L["7c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7c"]["TextScaled"] = true;
+G2L["7c"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5);
+G2L["7c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["7c"]["Size"] = UDim2.new(0.02614, 0, 0.0463, 0);
+G2L["7c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7c"]["Text"] = [[X]];
+G2L["7c"]["Position"] = UDim2.new(0.6493, 0, 0.2963, 0);
+
+
+-- StarterGui.zasettingz.TextButton.UICorner
+G2L["7d"] = Instance.new("UICorner", G2L["7c"]);
+G2L["7d"]["CornerRadius"] = UDim.new(0, 16);
+
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local Camera = game.Workspace.CurrentCamera
+local Teams = game:GetService("Teams")
+
+local LocalPlayer = Players.LocalPlayer
+local mouse = LocalPlayer:GetMouse()
+
+-- Settings
+local aimAssistRange = 1000
+local aimAssistEnabled = false
+local playerInfoEnabled = false
+local lockedTarget = nil
+local espEnabled = false
+local espBoxEnabled = true
+local espOutlineEnabled = true
+local espNameEnabled = false
+local espHealthEnabled = false
+local espDistanceEnabled = false
+local aimPredictionEnabled = true
+local teamCheckEnabled = true
+local aliveCheckEnabled = true
+local wallCheckEnabled = true
+
+-- Function to create a pop-up notification GUI
+local function createNotification(text)
+	local screenGui = Instance.new("ScreenGui")
+	screenGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
+	screenGui.IgnoreGuiInset = true
+
+	local frame = Instance.new("Frame")
+	frame.Size = UDim2.new(0.186, 0, 0.073, 0)
+	frame.Position = UDim2.new(0.807, 0, 0.907, 0)
+	frame.AnchorPoint = Vector2.new(0, 0)
+	frame.BackgroundTransparency = 0.5
+	frame.BackgroundColor3 = Color3.new(0, 0, 0)
+	frame.Parent = screenGui
+
+	local textLabel = Instance.new("TextLabel")
+	textLabel.Size = UDim2.new(1, 0, 1, 0)
+	textLabel.BackgroundTransparency = 1
+	textLabel.TextColor3 = Color3.new(1, 1, 1)
+	textLabel.TextScaled = true
+	textLabel.Text = text
+	textLabel.Parent = frame
+
+	local tweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	local tweenIn = TweenService:Create(frame, tweenInfo, {BackgroundTransparency = 0})
+	tweenIn:Play()
+
+	wait(2)
+
+	local tweenOut = TweenService:Create(frame, tweenInfo, {BackgroundTransparency = 1})
+	tweenOut:Play()
+	tweenOut.Completed:Connect(function()
+		screenGui:Destroy()
+	end)
+end
+
+-- Function to create the BillboardGui
+local function createBillboardGui(player)
+	local billboardGui = Instance.new("BillboardGui")
+	billboardGui.Name = "PlayerInfo"
+	billboardGui.Size = UDim2.new(0, 200, 0, 100)
+	billboardGui.StudsOffset = Vector3.new(0, 10, 0)
+	billboardGui.AlwaysOnTop = true
+
+	local head = player.Character:WaitForChild("Head")
+	billboardGui.Parent = head
+
+	local nameLabel = Instance.new("TextLabel")
+	nameLabel.Size = UDim2.new(1, 0, 0.3, 0)
+	nameLabel.BackgroundTransparency = 1
+	nameLabel.TextColor3 = Color3.new(1, 1, 1)
+	nameLabel.TextStrokeTransparency = 0.5
+	nameLabel.TextScaled = true
+	nameLabel.Text = player.Name
+	nameLabel.Parent = billboardGui
+	nameLabel.Visible = espNameEnabled
+
+	local healthLabel = Instance.new("TextLabel")
+	healthLabel.Size = UDim2.new(1, 0, 0.3, 0)
+	healthLabel.Position = UDim2.new(0, 0, 0.3, 0)
+	healthLabel.BackgroundTransparency = 1
+	healthLabel.TextColor3 = Color3.new(1, 0, 0)
+	healthLabel.TextStrokeTransparency = 0.5
+	healthLabel.TextScaled = true
+	healthLabel.Text = tostring(player.Character.Humanoid.Health) .. " HP"
+	healthLabel.Parent = billboardGui
+	healthLabel.Visible = espHealthEnabled
+
+	local distanceLabel = Instance.new("TextLabel")
+	distanceLabel.Size = UDim2.new(1, 0, 0.3, 0)
+	distanceLabel.Position = UDim2.new(0, 0, 0.6, 0)
+	distanceLabel.BackgroundTransparency = 1
+	distanceLabel.TextColor3 = Color3.new(0, 1, 0)
+	distanceLabel.TextStrokeTransparency = 0.5
+	distanceLabel.TextScaled = true
+	distanceLabel.Text = "Distance: 0 studs"
+	distanceLabel.Parent = billboardGui
+	distanceLabel.Visible = espDistanceEnabled
+
+	local largeBillboardGui = Instance.new("BillboardGui")
+	largeBillboardGui.Name = "PlayerImage"
+	largeBillboardGui.Size = UDim2.new(5, 0, 10, 0)
+	largeBillboardGui.StudsOffset = Vector3.new(0, 0, 0)
+	largeBillboardGui.AlwaysOnTop = true
+	largeBillboardGui.Parent = player.Character.PrimaryPart
+
+	local largeImageLabel = Instance.new("ImageLabel")
+	largeImageLabel.Size = UDim2.new(1, 0, 1, 0)
+	largeImageLabel.BackgroundTransparency = 1
+	largeImageLabel.Image = "rbxassetid://96772062591418"
+	largeImageLabel.Parent = largeBillboardGui
+	largeImageLabel.Visible = espBoxEnabled
+
+	local playerOutline = Instance.new("Highlight")
+	playerOutline.Name = "PlayerOutline"
+	playerOutline.Adornee = player.Character
+	playerOutline.Parent = player.Character
+	playerOutline.Enabled = espOutlineEnabled
+
+	return {
+		gui = billboardGui,
+		nameLabel = nameLabel,
+		healthLabel = healthLabel,
+		distanceLabel = distanceLabel,
+		largeGui = largeBillboardGui,
+		outline = playerOutline
+	}
+end
+
+-- Function to update the GUI
+local function updateBillboardGui(info, player)
+	local char = player.Character
+	if char then
+		local humanoid = char:FindFirstChild("Humanoid")
+		if humanoid then
+			info.healthLabel.Text = tostring(math.floor(humanoid.Health)) .. " HP"
+		end
+
+		local distance = (char.PrimaryPart.Position - LocalPlayer.Character.PrimaryPart.Position).magnitude
+		info.distanceLabel.Text = string.format("Distance: %d studs", math.floor(distance))
+	end
+end
+
+-- Function to check if a player is on the same team
+local function isOnSameTeam(player)
+	local playerTeam = player.Team
+	local localPlayerTeam = LocalPlayer.Team
+	return playerTeam and localPlayerTeam and playerTeam == localPlayerTeam
+end
+
+-- Function to check if a player is alive
+local function isPlayerAlive(player)
+	local humanoid = player.Character and player.Character:FindFirstChild("Humanoid")
+	return humanoid and humanoid.Health > 0
+end
+
+-- Function to check if a player's head is visible (wall check)
+--local function isHeadVisible(player)
+--	local head = player.Character and player.Character:FindFirstChild("Head")
+--	if not head then
+--		return false
+--	end
+
+--	local headPosition = Camera:WorldToViewportPoint(head.Position)
+--	return headPosition.Z > 0
+--end
+-- Function to check if a player's head is visible (ray check)
+--local function isHeadVisible(player)
+--	local character = player.Character
+--	if not character then
+--		return false
+--	end
+
+--	local head = character:FindFirstChild("Head")
+--	if not head then
+--		return false
+--	end
+
+--	local localPlayerCharacter = LocalPlayer.Character
+--	local localPlayerHead = localPlayerCharacter and localPlayerCharacter:FindFirstChild("Head")
+--	if not localPlayerHead then
+--		return false
+--	end
+
+--	-- Create the ray from local player's head to the target player's head
+--	local rayOrigin = localPlayerHead.Position
+--	local rayDirection = (head.Position - rayOrigin).Unit * (head.Position - rayOrigin).Magnitude
+--	local ray = Ray.new(rayOrigin, rayDirection)
+
+--	-- Perform the raycast
+--	local raycastResult = workspace:Raycast(ray.Origin, ray.Direction)
+
+--	-- Check if the ray hit anything
+--	if raycastResult then
+--		local hitPart = raycastResult.Instance
+
+--		-- If the hit part is neither the local player's character nor the target character, return false
+--		if not (hitPart:IsDescendantOf(localPlayerCharacter) or hitPart:IsDescendantOf(character)) then
+--			return false
+--		end
+--	end
+
+--	-- If the ray did not hit anything, or if it hit the local player's or target's character, return true
+--	return true
+--end
+-- Function to check if a player's head is visible (ray check)
+-- Function to check if a player's head is visible by checking for hits along the ray path
+local function isHeadVisible(player)
+	local character = player.Character
+	if not character then
+		return false
+	end
+
+	local head = character:FindFirstChild("Head")
+	if not head then
+		return false
+	end
+
+	local localPlayerCharacter = LocalPlayer.Character
+	if not localPlayerCharacter then
+		return false
+	end
+
+	local localPlayerHead = localPlayerCharacter:FindFirstChild("Head")
+	if not localPlayerHead then
+		return false
+	end
+
+	-- Initial ray parameters
+	local rayOrigin = localPlayerHead.Position
+	local rayDirection = (head.Position - rayOrigin).Unit
+	local distanceToTarget = (head.Position - rayOrigin).Magnitude
+
+	-- Raycast parameters to ignore the local player character
+	local raycastParams = RaycastParams.new()
+	raycastParams.FilterType = Enum.RaycastFilterType.Exclude
+	raycastParams.FilterDescendantsInstances = {localPlayerCharacter}
+
+	-- Perform the initial raycast from local player's head to target's head
+	local raycastResult = workspace:Raycast(rayOrigin, rayDirection * distanceToTarget, raycastParams)
+
+	-- If there is no hit or the ray hit the target character, the head is visible
+	if not raycastResult or raycastResult.Instance:IsDescendantOf(character) then
+		return true
+	end
+
+	-- If the ray hits the local player, continue raycasting from that point onward
+	if raycastResult.Instance:IsDescendantOf(localPlayerCharacter) then
+		local currentDistance = (raycastResult.Position - rayOrigin).Magnitude
+		rayOrigin = raycastResult.Position + rayDirection * 0.1 -- Slight offset to avoid hitting the same point
+
+		while currentDistance < distanceToTarget do
+			-- Perform the raycast from the new origin
+			raycastResult = workspace:Raycast(rayOrigin, rayDirection * (distanceToTarget - currentDistance), raycastParams)
+
+			-- Check if the ray hit anything
+			if raycastResult then
+				local hitPart = raycastResult.Instance
+
+				-- If the hit part is not part of the target character, return false
+				if not hitPart:IsDescendantOf(character) then
+					return false
+				end
+
+				-- Move the ray origin forward
+				currentDistance = (raycastResult.Position - rayOrigin).Magnitude
+				rayOrigin = raycastResult.Position + rayDirection * 0.1
+
+				-- Add a slight wait to prevent game crashes
+				wait(0.01) -- 10 milliseconds wait to prevent crash
+			else
+				-- If no hit, exit the loop
+				break
+			end
+		end
+
+		-- If no obstacles were found, return true
+		return true
+	end
+
+	-- If the first raycast hit any other object, return false
+	return false
+end
+
+
+
+
+
+-- Set up for each player
+local function setupBillboardGuis()
+	for _, player in pairs(Players:GetPlayers()) do
+		if player ~= LocalPlayer then
+			local info = createBillboardGui(player)
+
+			RunService.RenderStepped:Connect(function()
+				if player.Character then
+					updateBillboardGui(info, player)
+				end
+			end)
+
+			player.CharacterAdded:Connect(function()
+				if playerInfoEnabled then
+					wait(0.1)
+					local info = createBillboardGui(player)
+					RunService.RenderStepped:Connect(function()
+						if player.Character then
+							updateBillboardGui(info, player)
+						end
+					end)
+				end
+			end)
+		end
+	end
+
+	Players.PlayerAdded:Connect(function(player)
+		if player ~= LocalPlayer then
+			player.CharacterAdded:Connect(function()
+				local info = createBillboardGui(player)
+
+				RunService.RenderStepped:Connect(function()
+					if player.Character then
+						updateBillboardGui(info, player)
+					end
+				end)
+
+				player.Character.Humanoid.Died:Connect(function()
+					if playerInfoEnabled then
+						info.gui:Destroy()
+						info.largeGui:Destroy()
+						info.outline:Destroy()
+						player.CharacterAdded:Connect(function()
+							wait(0.1)
+							createBillboardGui(player)
+						end)
+					end
+				end)
+			end)
+		end
+	end)
+end
+
+-- Function to get the closest target to the mouse cursor
+local function getClosestTargetToCursor()
+	local closestTarget = nil
+	local closestDistance = math.huge
+
+	for _, player in pairs(Players:GetPlayers()) do
+		if player ~= LocalPlayer and player.Character and player.Character:FindFirstChild("Head") then
+			local character = player.Character
+			local head = character:FindFirstChild("Head")
+
+			-- Optional checks
+			if teamCheckEnabled and isOnSameTeam(player) then
+				continue
+			end
+
+			if aliveCheckEnabled and not isPlayerAlive(player) then
+				continue
+			end
+
+			if wallCheckEnabled and not isHeadVisible(player) then
+				continue
+			end
+
+			-- Calculate screen point distance
+			local screenPoint = Camera:WorldToViewportPoint(head.Position)
+			local mousePosition = Vector2.new(mouse.X, mouse.Y)
+			local distance = (Vector2.new(screenPoint.X, screenPoint.Y) - mousePosition).Magnitude
+
+			if distance < closestDistance then
+				closestTarget = player
+				closestDistance = distance
+			end
+		end
+	end
+
+	return closestTarget
+end
+
+-- Function to predict the target's position
+local function calculatePrediction(target)
+	local character = target.Character
+	if not character or not character:FindFirstChild("Humanoid") then
+		return nil
+	end
+
+	local humanoid = character.Humanoid
+	local targetPosition = character.Head.Position
+	local targetVelocity = humanoid.RootPart.Velocity
+	local currentDistance = (targetPosition - Camera.CFrame.Position).Magnitude
+	local timeToReach = currentDistance / (aimAssistRange * 0.5) -- Example speed factor
+
+	local predictedPosition = targetPosition + targetVelocity * timeToReach
+	return predictedPosition
+end
+
+-- Function to aim at the target
+local function aimAt(targetPosition)
+	local cameraCFrame = Camera.CFrame
+	local direction = (targetPosition - cameraCFrame.Position).Unit
+	local newCFrame = CFrame.new(cameraCFrame.Position, cameraCFrame.Position + direction)
+
+	Camera.CFrame = newCFrame
+end
+
+-- Function to handle aim assist activation
+RunService.RenderStepped:Connect(function()
+	if aimAssistEnabled and lockedTarget then
+		local targetPosition = lockedTarget.Character.Head.Position
+		if aimPredictionEnabled then
+			targetPosition = calculatePrediction(lockedTarget)
+		end
+		
+		if aliveCheckEnabled then
+			if isPlayerAlive(lockedTarget) then
+				
+			else
+				lockedTarget = nil
+				createNotification("Target Died.")
+				return
+			end
+		
+		end
+		
+		if teamCheckEnabled then
+			if isOnSameTeam(lockedTarget) ~= true then
+				
+			else
+				lockedTarget = nil
+				createNotification("Target Same Team.")
+				return
+			end
+		end
+		
+		if wallCheckEnabled then
+			if isHeadVisible(lockedTarget) then
+				
+			else
+				return
+			end
+			
+		end
+		
+		aimAt(targetPosition)
+	end
+end)
+
+-- Toggle Aim Assist with the X key
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+	if not gameProcessed then
+		if input.KeyCode == Enum.KeyCode.X then
+			aimAssistEnabled = not aimAssistEnabled
+			if aimAssistEnabled then
+				--lockedTarget = getClosestTargetToCursor()
+				createNotification("Aim Assist Enabled and locked onto " .. (lockedTarget and lockedTarget.Name or "no target (select a target by pressing Z)"))
+			else
+				createNotification("Aim Assist Disabled")
+				lockedTarget = nil
+			end
+		elseif input.KeyCode == Enum.KeyCode.Z then
+			lockedTarget = getClosestTargetToCursor()
+			if lockedTarget then
+				createNotification("Selected target: " .. lockedTarget.Name)
+			else
+				createNotification("No target found.")
+			end
+		end
+	end
+end)
+
+-- Toggle Player Info GUI with the Q key
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+	if not gameProcessed and input.KeyCode == Enum.KeyCode.Q then
+		playerInfoEnabled = not playerInfoEnabled
+		if playerInfoEnabled then
+			setupBillboardGuis()
+			createNotification("ESP Enabled")
+		else
+			for _, player in pairs(Players:GetPlayers()) do
+				if player ~= LocalPlayer and player.Character then
+					local head = player.Character:FindFirstChild("Head")
+					if head then
+						local billboardGui = head:FindFirstChild("PlayerInfo")
+						if billboardGui then
+							billboardGui:Destroy()
+						end
+					end
+
+					local primaryPart = player.Character:FindFirstChild("HumanoidRootPart")
+					if primaryPart then
+						local largeBillboardGui = primaryPart:FindFirstChild("PlayerImage")
+						if largeBillboardGui then
+							largeBillboardGui:Destroy()
+						end
+					end
+
+					local outline = player.Character:FindFirstChild("PlayerOutline")
+					if outline then
+						outline:Destroy()
+					end
+				end
+			end
+			createNotification("ESP Disabled")
+		end
+	end
+end)
+
+-- Toggle ESP with the RightShift key
+--UserInputService.InputBegan:Connect(function(input, gameProcessed)
+--	if not gameProcessed and input.KeyCode == Enum.KeyCode.RightShift then
+--		espEnabled = not espEnabled
+--		if espEnabled then
+--			createNotification("ESP Enabled")
+--		else
+--			for _, player in pairs(Players:GetPlayers()) do
+--				if player ~= LocalPlayer and player.Character then
+--					local head = player.Character:FindFirstChild("Head")
+--					if head then
+--						local billboardGui = head:FindFirstChild("PlayerInfo")
+--						if billboardGui then
+--							billboardGui:Destroy()
+--						end
+--					end
+
+--					local primaryPart = player.Character:FindFirstChild("HumanoidRootPart")
+--					if primaryPart then
+--						local largeBillboardGui = primaryPart:FindFirstChild("PlayerImage")
+--						if largeBillboardGui then
+--							largeBillboardGui:Destroy()
+--						end
+--					end
+
+--					local outline = player.Character:FindFirstChild("Highlight")
+--					if outline then
+--						outline:Destroy()
+--					end
+--				end
+--			end
+--			createNotification("ESP Disabled")
+--		end
+--	end
+--end)
+
+-- Key press detection for GUI toggle
+local playerGui = LocalPlayer:WaitForChild("PlayerGui")
+local screenGui = playerGui:FindFirstChild("zasettingz")
+
+if not screenGui then
+	warn("GUI named 'zasettingz' not found in PlayerGui.")
+	return
+end
+
+screenGui.Enabled = false
+
+local function onKeyPress(input, gameProcessed)
+	if gameProcessed then return end
+	if input.KeyCode == Enum.KeyCode.RightShift then
+		screenGui.Enabled = not screenGui.Enabled
+	end
+end
+
+UserInputService.InputBegan:Connect(onKeyPress)
+
+-- GUI MANAGER
+
+local Interface = LocalPlayer.PlayerGui:WaitForChild("zasettingz")
+local AIMThings = Interface.Background.AIM
+local ESPThings = Interface.Background.ESP
+local Tabs = Interface.Background.Tabs
+
+-- Close Button Function
+Interface.TextButton.MouseButton1Click:Connect(function()
+	Interface.Enabled = false
+end)
+
+-- Tab Selector
+Tabs.AIM.MouseButton1Click:Connect(function()
+	AIMThings.Visible = true
+	ESPThings.Visible = false
+end)
+Tabs.ESP.MouseButton1Click:Connect(function()
+	AIMThings.Visible = false
+	ESPThings.Visible = true
+end)
+
+-- Initial Setup (AIM)
+if aimPredictionEnabled then
+	AIMThings.Pred.ON.Visible = true
+	AIMThings.Pred.OFF.Visible = false
+else
+	AIMThings.Pred.ON.Visible = false
+	AIMThings.Pred.OFF.Visible = true
+end
+
+if teamCheckEnabled then
+	AIMThings.Team.ON.Visible = true
+	AIMThings.Team.OFF.Visible = false
+else
+	AIMThings.Team.ON.Visible = false
+	AIMThings.Team.OFF.Visible = true
+end
+
+if wallCheckEnabled then
+	AIMThings.Wall.ON.Visible = true
+	AIMThings.Wall.OFF.Visible = false
+else
+	AIMThings.Wall.ON.Visible = false
+	AIMThings.Wall.OFF.Visible = true
+end
+
+-- Initial Setup (ESP)
+if espBoxEnabled then
+	ESPThings.Box.ON.Visible = true
+	ESPThings.Box.OFF.Visible = false
+else
+	ESPThings.Box.ON.Visible = false
+	ESPThings.Box.OFF.Visible = true
+end
+
+if espHealthEnabled then
+	ESPThings.Health.ON.Visible = true
+	ESPThings.Health.OFF.Visible = false
+else
+	ESPThings.Health.ON.Visible = false
+	ESPThings.Health.OFF.Visible = true
+end
+
+if espEnabled then
+	ESPThings.Inf.ON.Visible = true
+	ESPThings.Inf.OFF.Visible = false
+else
+	ESPThings.Inf.ON.Visible = false
+	ESPThings.Inf.OFF.Visible = true
+end
+
+if espOutlineEnabled then
+	ESPThings.Plr.ON.Visible = true
+	ESPThings.Plr.OFF.Visible = false
+else
+	ESPThings.Plr.ON.Visible = false
+	ESPThings.Plr.OFF.Visible = true
+end
+
+if espDistanceEnabled then
+	ESPThings.dstan.ON.Visible = true
+	ESPThings.dstan.OFF.Visible = false
+else
+	ESPThings.dstan.ON.Visible = false
+	ESPThings.dstan.OFF.Visible = true
+end
+
+if espNameEnabled then
+	ESPThings.nme.ON.Visible = true
+	ESPThings.nme.OFF.Visible = false
+else
+	ESPThings.nme.ON.Visible = false
+	ESPThings.nme.OFF.Visible = true
+end
+
+-- SELECTING FUNCTIONS (AIM)
+
+AIMThings.Pred.ON.MouseButton1Click:Connect(function()
+	aimPredictionEnabled = false
+	AIMThings.Pred.ON.Visible = false
+	AIMThings.Pred.OFF.Visible = true
+	createNotification("AimPrediction has been turned off.")
+end)
+AIMThings.Pred.OFF.MouseButton1Click:Connect(function()
+	aimPredictionEnabled = true
+	AIMThings.Pred.ON.Visible = true
+	AIMThings.Pred.OFF.Visible = false
+	createNotification("AimPrediction has been turned on.")
+end)
+
+AIMThings.Team.ON.MouseButton1Click:Connect(function()
+	teamCheckEnabled = false
+	AIMThings.Team.ON.Visible = false
+	AIMThings.Team.OFF.Visible = true
+	createNotification("TeamCheck has been turned off.")
+end)
+AIMThings.Team.OFF.MouseButton1Click:Connect(function()
+	teamCheckEnabled = true
+	AIMThings.Team.ON.Visible = true
+	AIMThings.Team.OFF.Visible = false
+	createNotification("TeamCheck has been turned on.")
+end)
+
+AIMThings.Wall.ON.MouseButton1Click:Connect(function()
+	wallCheckEnabled = false
+	AIMThings.Wall.ON.Visible = false
+	AIMThings.Wall.OFF.Visible = true
+	createNotification("WallCheck has been turned off.")
+end)
+AIMThings.Wall.OFF.MouseButton1Click:Connect(function()
+	wallCheckEnabled = true
+	AIMThings.Wall.ON.Visible = true
+	AIMThings.Wall.OFF.Visible = false
+	createNotification("WallCheck has been turned on.")
+end)
+
+-- SELECTING FUNCTIONS (ESP)
+
+ESPThings.Box.ON.MouseButton1Click:Connect(function()
+	espBoxEnabled = false
+	ESPThings.Box.ON.Visible = false
+	ESPThings.Box.OFF.Visible = true
+	createNotification("ESP Box has been turned off.")
+end)
+ESPThings.Box.OFF.MouseButton1Click:Connect(function()
+	espBoxEnabled = true
+	ESPThings.Box.ON.Visible = true
+	ESPThings.Box.OFF.Visible = false
+	createNotification("ESP Box has been turned on.")
+end)
+
+ESPThings.Health.ON.MouseButton1Click:Connect(function()
+	espHealthEnabled = false
+	ESPThings.Health.ON.Visible = false
+	ESPThings.Health.OFF.Visible = true
+	createNotification("ESP Health Display has been turned off.")
+end)
+ESPThings.Health.OFF.MouseButton1Click:Connect(function()
+	espHealthEnabled = true
+	ESPThings.Health.ON.Visible = true
+	ESPThings.Health.OFF.Visible = false
+	createNotification("ESP Health Display has been turned on.")
+end)
+
+ESPThings.Inf.ON.MouseButton1Click:Connect(function()
+	ESPThings.Inf.ON.Visible = false
+	ESPThings.Inf.OFF.Visible = true
+	createNotification("This Setting is under development.")
+end)
+ESPThings.Inf.OFF.MouseButton1Click:Connect(function()
+	ESPThings.Inf.ON.Visible = true
+	ESPThings.Inf.OFF.Visible = false
+	createNotification("This Setting is under development.")
+end)
+
+ESPThings.Plr.ON.MouseButton1Click:Connect(function()
+	espOutlineEnabled = false
+	ESPThings.Plr.ON.Visible = false
+	ESPThings.Plr.OFF.Visible = true
+	createNotification("ESP Player Outline has been turned off.")
+end)
+ESPThings.Plr.OFF.MouseButton1Click:Connect(function()
+	espOutlineEnabled = true
+	ESPThings.Plr.ON.Visible = true
+	ESPThings.Plr.OFF.Visible = false
+	createNotification("ESP Player Outline has been turned on.")
+end)
+
+ESPThings.dstan.ON.MouseButton1Click:Connect(function()
+	espDistanceEnabled = false
+	ESPThings.dstan.ON.Visible = false
+	ESPThings.dstan.OFF.Visible = true
+	createNotification("ESP Distance Display has been turned off.")
+end)
+ESPThings.dstan.OFF.MouseButton1Click:Connect(function()
+	espDistanceEnabled = true
+	ESPThings.dstan.ON.Visible = true
+	ESPThings.dstan.OFF.Visible = false
+	createNotification("ESP Distance Display has been turned on.")
+end)
+
+ESPThings.nme.ON.MouseButton1Click:Connect(function()
+	espNameEnabled = false
+	ESPThings.nme.ON.Visible = false
+	ESPThings.nme.OFF.Visible = true
+	createNotification("ESP Name Display has been turned off.")
+end)
+ESPThings.nme.OFF.MouseButton1Click:Connect(function()
+	espNameEnabled = true
+	ESPThings.nme.ON.Visible = true
+	ESPThings.nme.OFF.Visible = false
+	createNotification("ESP Name Display has been turned on.")
+end)
+
+
+ 
