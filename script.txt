@@ -1904,6 +1904,7 @@ if not screenGui then
 end
 
 screenGui.Enabled = false
+createNotification("Universal Hacks is now turned on. Press Right Shift to open up GUI.")
 
 local function onKeyPress(input, gameProcessed)
 	if gameProcessed then return end
@@ -2128,6 +2129,3 @@ ESPThings.nme.OFF.MouseButton1Click:Connect(function()
 	ESPThings.nme.OFF.Visible = false
 	createNotification("ESP Name Display has been turned on.")
 end)
-
-
- 
