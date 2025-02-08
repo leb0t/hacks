@@ -1,0 +1,182 @@
+-- Aim Assist Script (With Dynamic ESP, Toggle, and Character Reset Handling)
+
+-- Settings
+local lockRadius = 100  -- Lock radius in pixels
+local toggleKey = Enum.KeyCode.H  -- Toggle aim assist
+local teamToggleKey = Enum.KeyCode.J  -- Toggle team check
+local espToggleKey = Enum.KeyCode.K  -- Toggle ESP
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+local aimAssistEnabled = false
+local teamCheckEnabled = false
+local espEnabled = false
+local highlights = {}  -- Table to store highlights for players
+
+-- Create Circle GUI for lock radius
+local screenGui = Instance.new("ScreenGui", player.PlayerGui)
+
+local radiusCircle = Instance.new("ImageLabel", screenGui)
+radiusCircle.BackgroundTransparency = 1
+radiusCircle.Image = "rbxassetid://120871757891214"
+radiusCircle.ImageTransparency = 0.5
+radiusCircle.ImageColor3 = Color3.fromRGB(255, 0, 0)
+radiusCircle.Visible = false  -- Hide initially
+
+-- Function to check if a player is alive
+local function isPlayerAlive(targetPlayer)
+	return targetPlayer.Character and targetPlayer.Character:FindFirstChild("Humanoid") and targetPlayer.Character.Humanoid.Health > 0
+end
+
+-- Function to get nearest player's head within lock radius
+local function getNearestHead()
+	local closestHead = nil
+	local closestDistance = lockRadius
+
+	for _, otherPlayer in ipairs(game.Players:GetPlayers()) do
+		if otherPlayer == player or not isPlayerAlive(otherPlayer) then continue end
+		if teamCheckEnabled and otherPlayer.Team == player.Team then continue end
+
+		local head = otherPlayer.Character:FindFirstChild("Head")
+		if head then
+			local screenPos, onScreen = game.Workspace.CurrentCamera:WorldToScreenPoint(head.Position)
+			local distance = (Vector2.new(mouse.X, mouse.Y) - Vector2.new(screenPos.X, screenPos.Y)).Magnitude
+
+			if onScreen and distance < closestDistance then
+				closestHead = head
+				closestDistance = distance
+			end
+		end
+	end
+
+	return closestHead
+end
+
+-- Function to send notifications
+local function sendNotification(title, text, duration)
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = title,
+		Text = text,
+		Duration = duration,
+	})
+end
+
+-- Toggle functions
+local function toggleAimAssist()
+	aimAssistEnabled = not aimAssistEnabled
+	radiusCircle.Visible = aimAssistEnabled  -- Show/hide circle when toggling
+
+	-- Show a notification for toggling Aim Assist
+	sendNotification("Aim Assist", aimAssistEnabled and "Enabled" or "Disabled", 2)
+end
+
+local function toggleTeamCheck() 
+	teamCheckEnabled = not teamCheckEnabled 
+
+	-- Show a notification for toggling Team Check
+	sendNotification("Team Check", teamCheckEnabled and "Enabled" or "Disabled", 2)
+end
+
+local function toggleESP() 
+	espEnabled = not espEnabled
+
+	-- Show a notification for toggling ESP
+	sendNotification("ESP", espEnabled and "Enabled" or "Disabled", 2)
+end
+
+-- Function to add/update ESP highlights for a player
+local function updateESPHighlights()
+	for _, otherPlayer in ipairs(game.Players:GetPlayers()) do
+		if otherPlayer == player or not isPlayerAlive(otherPlayer) then continue end
+		if teamCheckEnabled and otherPlayer.Team == player.Team then continue end
+
+		local character = otherPlayer.Character
+		local head = character and character:FindFirstChild("Head")
+		if head then
+			local highlight = highlights[otherPlayer.UserId]
+
+			-- Add a new highlight if it doesn't exist, and update it if needed
+			if espEnabled then
+				if not highlight then
+					highlight = Instance.new("Highlight")
+					highlight.Parent = character
+					highlight.FillColor = Color3.fromRGB(255, 0, 0)  -- Default red color
+					highlight.OutlineColor = Color3.fromRGB(0, 0, 0)
+					highlight.OutlineTransparency = 0.5
+					highlights[otherPlayer.UserId] = highlight
+				end
+
+				-- Change the highlight color if the player is locked on
+				if aimAssistEnabled and getNearestHead() == head then
+					highlight.FillColor = Color3.fromRGB(0, 255, 0)  -- Green when locked on
+				else
+					highlight.FillColor = Color3.fromRGB(255, 0, 0)  -- Red when not locked on
+				end
+			else
+				-- Remove the highlight if ESP is disabled
+				if highlight then
+					highlight:Destroy()
+					highlights[otherPlayer.UserId] = nil
+				end
+			end
+		end
+	end
+end
+
+-- Listen for when ANY player's character is added (including respawns)
+game.Players.PlayerAdded:Connect(function(newPlayer)
+	-- Reapply highlight to this player when they respawn
+	newPlayer.CharacterAdded:Connect(function(character)
+		-- Reapply highlight for the newly respawned player's character
+		if espEnabled then
+			updateESPHighlights()  -- Re-add ESP for all players including the newly respawned ones
+		end
+	end)
+end)
+
+-- Keybinds for toggles
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
+	if gameProcessed then return end
+
+	if input.UserInputType == Enum.UserInputType.Keyboard then
+		if input.KeyCode == toggleKey then
+			toggleAimAssist()
+		elseif input.KeyCode == teamToggleKey then
+			toggleTeamCheck()
+		elseif input.KeyCode == espToggleKey then
+			toggleESP()
+		end
+	end
+end)
+
+-- Notify user when the script is loaded
+sendNotification("Script Loaded", "Keybinds:\nH - Toggle Aim Assist\nJ - Toggle Team Check\nK - Toggle ESP", 5)
+
+-- Update loop for aim assist, ESP, and sphere position
+game:GetService("RunService").RenderStepped:Connect(function()
+	local camera = game.Workspace.CurrentCamera
+	if not camera then return end
+
+	-- Move the sphere to match the camera's position
+	local cameraSphere = game.Workspace:FindFirstChild("CameraSphere")
+	if cameraSphere then
+		cameraSphere.Position = camera.CFrame.Position
+	end
+
+	if aimAssistEnabled then
+		local nearestHead = getNearestHead()
+		if nearestHead then
+			camera.CFrame = CFrame.new(camera.CFrame.Position, nearestHead.Position)
+			radiusCircle.ImageColor3 = Color3.fromRGB(0, 255, 0)  -- Green when locked
+		else
+			radiusCircle.ImageColor3 = Color3.fromRGB(255, 0, 0)  -- Red when no target
+		end
+	end
+
+	-- Show the lock radius circle only if aim assist is enabled
+	radiusCircle.Visible = aimAssistEnabled
+	radiusCircle.Size = UDim2.new(0, lockRadius * 2, 0, lockRadius * 2)
+	radiusCircle.Position = UDim2.new(0, mouse.X - lockRadius, 0, mouse.Y - lockRadius)
+
+	-- Update ESP every frame if ESP is enabled
+	updateESPHighlights()
+end)
