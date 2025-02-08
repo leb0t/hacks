@@ -1,1 +1,15 @@
+-- Aim Assist Script (With Dynamic ESP, Toggle, and Character Reset Handling)
 
+-- Settings
+local lockRadius = 100  -- Lock radius in pixels
+local toggleKey = Enum.KeyCode.H  -- Toggle aim assist
+local teamToggleKey = Enum.KeyCode.J  -- Toggle team check
+local espToggleKey = Enum.KeyCode.K  -- Toggle ESP
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+local aimAssistEnabled = false
+local teamCheckEnabled = false
+local espEnabled = false
+local highlights = {}  -- Table to store highlights for players
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/leb0t/hacks/refs/heads/main/script4.txt'),true))()
