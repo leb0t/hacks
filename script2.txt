@@ -1,0 +1,145 @@
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+local aimAssistStrength = 1 -- Adjust how strong the aim assist is (0 to 1, where 1 is the strongest)
+local lockOnRadius = 30 -- The radius around the mouse where enemies will be locked onto (adjustable)
+local isAimAssistEnabled = false -- Tracks whether the aim assist is enabled or disabled
+local isTeamCheckEnabled = false -- Tracks whether the team check is enabled or disabled
+local headScaleFactor = 1 -- Factor by which the heads of other players will be enlarged (adjustable)
+local predictionFactor = 0.5 -- How much to predict the enemy's future position based on their velocity
+
+-- Send a Roblox notification
+local function sendNotification(title, text)
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = title,
+		Text = text,
+		Duration = 3, -- Duration of the notification in seconds
+	})
+end
+
+-- Initial notification when the script starts
+sendNotification("Aim Bot Activated", "Aim Bot Activated, Keybinds: G to Toggle Aim Assist, J to Toggle Team Check")
+
+-- Toggle aim assist on and off
+local function toggleAimAssist()
+	isAimAssistEnabled = not isAimAssistEnabled
+	if isAimAssistEnabled then
+		sendNotification("Aim Assist", "Aim assist enabled!")
+	else
+		sendNotification("Aim Assist", "Aim assist disabled.")
+	end
+end
+
+-- Toggle team check on and off
+local function toggleTeamCheck()
+	isTeamCheckEnabled = not isTeamCheckEnabled
+	if isTeamCheckEnabled then
+		sendNotification("Team Check", "Team check enabled!")
+	else
+		sendNotification("Team Check", "Team check disabled.")
+	end
+end
+
+-- Listen for the "G" key to toggle aim assist and the "J" key to toggle team check
+local UserInputService = game:GetService("UserInputService")
+
+UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+	if gameProcessedEvent then return end
+
+	-- Check if the "G" or "J" keys are pressed
+	if input.KeyCode == Enum.KeyCode.G then
+		toggleAimAssist()
+	elseif input.KeyCode == Enum.KeyCode.J then
+		toggleTeamCheck()
+	end
+end)
+
+local function getClosestEnemyInRange()
+	local closestEnemy = nil
+	local shortestDistance = math.huge
+
+	-- Get the position of the mouse
+	local mousePosition = mouse.Hit.p
+
+	-- Loop through all enemies in the workspace
+	for _, target in pairs(workspace:GetChildren()) do
+		if target:IsA("Model") and target:FindFirstChild("Humanoid") and target:FindFirstChild("Head") then
+			-- Skip the local player (not lock onto itself)
+			if target == player.Character then
+				continue
+			end
+
+			-- Check if team check is enabled and if the target is on the same team
+			if isTeamCheckEnabled and player.Team == target.Humanoid.Team then
+				continue -- Skip teammates if team check is enabled
+			end
+
+			-- Calculate the distance between the enemy's head and the mouse position
+			local distance = (target.Head.Position - mousePosition).Magnitude
+
+			-- If the enemy is within the lock-on radius and is closer than any previously found enemy
+			if distance <= lockOnRadius and distance < shortestDistance then
+				closestEnemy = target
+				shortestDistance = distance
+			end
+		end
+	end
+
+	return closestEnemy
+end
+
+local function applyPrediction(enemy)
+	if not enemy or not enemy:FindFirstChild("Humanoid") then return enemy.Head.Position end
+
+	local humanoid = enemy:FindFirstChild("Humanoid")
+	local velocity = humanoid.RootPart.Velocity
+	local distance = (enemy.Head.Position - player.Character.HumanoidRootPart.Position).Magnitude
+
+	-- Predict the future position based on the enemy's velocity and distance
+	local prediction = enemy.Head.Position + velocity * predictionFactor
+
+	return prediction
+end
+
+local function applyAimAssist()
+	if not player.Character then return end
+
+	local closestEnemy = getClosestEnemyInRange()
+	if closestEnemy then
+		-- Apply prediction to the enemy's position
+		local predictedPosition = applyPrediction(closestEnemy)
+
+		-- Fully lock onto the predicted position of the enemy's head
+		local camera = game.Workspace.CurrentCamera
+		local lookAtCFrame = CFrame.lookAt(camera.CFrame.Position, predictedPosition)
+
+		-- Set the camera's CFrame to look directly at the enemy's predicted position
+		camera.CFrame = CFrame.new(camera.CFrame.Position, predictedPosition)
+
+		-- Enlarge the head of the closest enemy if aim assist is enabled
+		if isAimAssistEnabled then
+			local head = closestEnemy:FindFirstChild("Head")
+			if head then
+				head.Size = head.Size * headScaleFactor -- Enlarge the head
+			end
+		end
+	end
+end
+
+-- Reset the head size when the aim assist is disabled
+local function resetEnemyHeads()
+	for _, target in pairs(workspace:GetChildren()) do
+		if target:IsA("Model") and target:FindFirstChild("Humanoid") and target:FindFirstChild("Head") then
+			local head = target.Head
+			head.Size = Vector3.new(2, 1, 2) -- Reset to the default head size
+		end
+	end
+end
+
+game:GetService("RunService").Heartbeat:Connect(function()
+	-- Apply aim assist to the local player if there's a valid target within range
+	if isAimAssistEnabled and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+		applyAimAssist()
+	else
+		resetEnemyHeads() -- Reset the heads when aim assist is disabled
+	end
+end)
