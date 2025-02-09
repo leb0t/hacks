@@ -1,0 +1,154 @@
+-- ESP
+
+-- VARIABLES
+local player = game.Players.LocalPlayer
+local espEnabled = false
+local espKey = Enum.KeyCode.X
+
+-- Function to send notifications
+local function sendNotification(title, text, duration)
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = title,
+		Text = text,
+		Duration = duration,
+	})
+end
+
+-- Status Giver / Returns "Enabled" or "Disabled"
+local function espStatus()
+	if espEnabled == true then
+		return "Enabled"
+	else
+		return "Disabled"
+	end
+end
+
+-- PLAYER CHECKER
+local function isPlayer(obj)
+	for i, loopedplayer in pairs(game.Players:GetChildren()) do
+		if loopedplayer.Character == obj then
+			return true
+		end
+	end
+end
+
+-- HOT KEY MANAGER
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
+	if gameProcessed then return end
+
+	if input.UserInputType == Enum.UserInputType.Keyboard then
+		-- Toggle Team Check
+		if input.KeyCode == espKey then
+			espEnabled = not espEnabled
+			sendNotification("ESP STATE", espStatus(), 2)
+		end
+	end
+end)
+
+-- REFRESHING ESP / CHECKING
+game:GetService("RunService").RenderStepped:Connect(function()
+	for i, plr in pairs(game.Players:GetChildren()) do
+		if plr == player then
+		else
+			if espEnabled then
+				if plr.Character:FindFirstChild("ESP") then
+					break
+				else
+					local Highlight = Instance.new("Highlight", plr.Character)
+					Highlight.Name = "ESP"
+					Highlight.FillTransparency = 0.5
+					Highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+					Highlight.FillColor = Color3.new(1, 0, 0)
+					Highlight.OutlineTransparency = 0
+					Highlight.OutlineColor = Color3.new(0.501961, 0, 0)
+					
+					local bgui = Instance.new("BillboardGui", plr.Character)
+					bgui.Name = "OUTLINE"
+					bgui.AlwaysOnTop = true
+					bgui.Size = UDim2.new(5, 0,10, 0)
+					local outline = Instance.new("ImageLabel", bgui)
+					outline.Image = "rbxassetid://96772062591418"
+					outline.BackgroundTransparency = 1
+					outline.Size = UDim2.new(1,0,1,0)
+					local bgui2 = Instance.new("BillboardGui", plr.Character)
+					bgui2.Name = "NAME"
+					bgui2.AlwaysOnTop = true
+					bgui2.Size = UDim2.new(0, 200,0, 50)
+					bgui2.StudsOffset = Vector3.new(0,7,0)
+					local text = Instance.new("TextLabel", bgui2)
+					text.BackgroundTransparency = 1
+					text.Text = "@"..plr.Name
+					text.TextScaled = true
+					text.Font = Enum.Font.FredokaOne
+					text.TextColor3 = Color3.new(1, 1, 1)
+					text.TextStrokeColor3 = Color3.new(0, 0, 0)
+					text.TextStrokeTransparency = 0
+					text.Size = UDim2.new(1,0,1,0)
+					
+				end
+			else
+				if plr.Character:FindFirstChild("ESP") then
+					plr.Character:FindFirstChild("ESP"):Destroy()
+				end
+				if plr.Character:FindFirstChild("OUTLINE") then
+					plr.Character:FindFirstChild("OUTLINE"):Destroy()
+				end
+				if plr.Character:FindFirstChild("NAME") then
+					plr.Character:FindFirstChild("NAME"):Destroy()
+				end
+			end
+		end
+	end
+end)
+
+game.Workspace.ChildAdded:Connect(function(child)
+	print(child)
+	wait(1)
+	if isPlayer(child) then
+		if child == player.Character then
+		else
+			if espEnabled then
+				local Highlight = Instance.new("Highlight", child)
+				Highlight.Name = "ESP"
+				Highlight.FillTransparency = 0.5
+				Highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+				Highlight.FillColor = Color3.new(1, 0, 0)
+				Highlight.OutlineTransparency = 0
+				Highlight.OutlineColor = Color3.new(0.501961, 0, 0)
+				
+				local bgui = Instance.new("BillboardGui", child)
+				bgui.Name = "OUTLINE"
+				bgui.AlwaysOnTop = true
+				bgui.Size = UDim2.new(5, 0,10, 0)
+				local outline = Instance.new("ImageLabel", bgui)
+				outline.Image = "rbxassetid://96772062591418"
+				outline.BackgroundTransparency = 1
+				outline.Size = UDim2.new(1,0,1,0)
+				local bgui2 = Instance.new("BillboardGui", child)
+				bgui2.Name = "NAME"
+				bgui2.AlwaysOnTop = true
+				bgui2.Size = UDim2.new(0, 200,0, 50)
+				bgui2.StudsOffset = Vector3.new(0,10,0)
+				local text = Instance.new("TextLabel", bgui2)
+				text.BackgroundTransparency = 1
+				text.Text = "@"..child.Name
+				text.TextScaled = true
+				text.Font = Enum.Font.FredokaOne
+				text.TextColor3 = Color3.new(1, 1, 1)
+				text.TextStrokeColor3 = Color3.new(0, 0, 0)
+				text.TextStrokeTransparency = 0
+				text.Size = UDim2.new(1,0,1,0)
+			else
+				if child:FindFirstChild("ESP") then
+					child:FindFirstChild("ESP"):Destroy()
+				end
+				if child:FindFirstChild("OUTLINE") then
+					child:FindFirstChild("OUTLINE"):Destroy()
+				end
+				if child:FindFirstChild("NAME") then
+					child:FindFirstChild("NAME"):Destroy()
+				end
+			end
+		end
+	end
+end)
