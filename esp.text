@@ -32,6 +32,16 @@ local function isPlayer(obj)
 	end
 end
 
+-- GET DISTANCE
+local function getDistance(child)
+	if child and child:FindFirstChild("HumanoidRootPart") and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+		local childPosition = child.HumanoidRootPart.Position
+		local playerPosition = player.Character.HumanoidRootPart.Position
+		return (childPosition - playerPosition).Magnitude
+	end
+	return nil -- Return nil if either part is missing
+end
+
 -- HOT KEY MANAGER
 game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
 	if gameProcessed then return end
@@ -77,7 +87,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 					bgui2.StudsOffset = Vector3.new(0,7,0)
 					local text = Instance.new("TextLabel", bgui2)
 					text.BackgroundTransparency = 1
-					text.Text = "@"..plr.Name
+					text.Text = "@"..plr.Character.Name.."\n Distance: "..math.round(getDistance(plr.Character)).."\n Health: "..plr.Character.Humanoid.Health
 					text.TextScaled = true
 					text.Font = Enum.Font.FredokaOne
 					text.TextColor3 = Color3.new(1, 1, 1)
@@ -85,6 +95,9 @@ game:GetService("RunService").RenderStepped:Connect(function()
 					text.TextStrokeTransparency = 0
 					text.Size = UDim2.new(1,0,1,0)
 					
+					while wait(0.1) do
+						text.Text = "@"..plr.Character.Name.."\n Distance: "..math.round(getDistance(plr.Character)).."\n Health: "..plr.Character.Humanoid.Health
+					end
 				end
 			else
 				if plr.Character:FindFirstChild("ESP") then
@@ -131,13 +144,17 @@ game.Workspace.ChildAdded:Connect(function(child)
 				bgui2.StudsOffset = Vector3.new(0,10,0)
 				local text = Instance.new("TextLabel", bgui2)
 				text.BackgroundTransparency = 1
-				text.Text = "@"..child.Name
+				text.Text = "@"..child.Name.."\n Distance: "..math.round(getDistance(child)).."\n Health: "..child.Humanoid.Health
 				text.TextScaled = true
 				text.Font = Enum.Font.FredokaOne
 				text.TextColor3 = Color3.new(1, 1, 1)
 				text.TextStrokeColor3 = Color3.new(0, 0, 0)
 				text.TextStrokeTransparency = 0
 				text.Size = UDim2.new(1,0,1,0)
+				
+				while wait(0.1) do
+					text.Text = "@"..child.Name.."\n Distance: "..math.round(getDistance(child)).."\n Health: "..child.Humanoid.Health
+				end
 			else
 				if child:FindFirstChild("ESP") then
 					child:FindFirstChild("ESP"):Destroy()
