@@ -1,0 +1,248 @@
+-- Settings
+local lockRadius = 100  -- Lock radius in pixels
+local toggleKey = Enum.KeyCode.H  -- Toggle aim assist
+local teamToggleKey = Enum.KeyCode.J  -- Toggle team check
+local espToggleKey = Enum.KeyCode.K  -- Toggle ESP
+local predictionToggleKey = Enum.KeyCode.P  -- Toggle prediction
+local autoFireKey = Enum.KeyCode.L
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+local aimAssistEnabled = false
+local teamCheckEnabled = false
+local espEnabled = false
+local predictionEnabled = false  -- Prediction toggle state
+local autoFireEnabled = false  -- Auto Fire toggle state
+local highlights = {}  -- Table to store highlights for players
+
+-- Prediction modifier (0 to 1, 1 = full prediction)
+local predictionModifier = 0.5
+
+-- Create Circle GUI for lock radius
+local screenGui = Instance.new("ScreenGui", player.PlayerGui)
+
+local radiusCircle = Instance.new("ImageLabel", screenGui)
+radiusCircle.BackgroundTransparency = 1
+radiusCircle.Image = "rbxassetid://120871757891214"
+radiusCircle.ImageTransparency = 0.5
+radiusCircle.ImageColor3 = Color3.fromRGB(255, 0, 0)
+radiusCircle.Visible = false  -- Hide initially
+
+-- Function to send notifications
+local function sendNotification(title, text, duration)
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = title,
+		Text = text,
+		Duration = duration,
+	})
+end
+
+-- Function to check if a player is alive
+local function isPlayerAlive(targetPlayer)
+	return targetPlayer.Character and targetPlayer.Character:FindFirstChild("Humanoid") and targetPlayer.Character.Humanoid.Health > 0
+end
+
+-- Function to get nearest player's head within lock radius
+local function getNearestHead()
+	local closestHead = nil
+	local closestDistance = lockRadius
+
+	for _, otherPlayer in ipairs(game.Players:GetPlayers()) do
+		if otherPlayer == player or not isPlayerAlive(otherPlayer) then continue end
+		if teamCheckEnabled and otherPlayer.Team == player.Team then continue end
+
+		local head = otherPlayer.Character:FindFirstChild("Head")
+		if head then
+			local screenPos, onScreen = game.Workspace.CurrentCamera:WorldToScreenPoint(head.Position)
+			local distance = (Vector2.new(mouse.X, mouse.Y) - Vector2.new(screenPos.X, screenPos.Y)).Magnitude
+
+			if onScreen and distance < closestDistance then
+				closestHead = head
+				closestDistance = distance
+			end
+		end
+	end
+
+	return closestHead
+end
+
+-- Function to predict the target position based on velocity
+local function predictTargetPosition(targetHead, targetPlayer)
+	local targetHumanoid = targetPlayer:FindFirstChild("Humanoid")
+	if not targetHumanoid then return targetHead.Position end
+
+	-- Get the velocity of the target
+	local velocity = targetHumanoid.RootPart.AssemblyLinearVelocity
+	local distanceToTarget = (targetHead.Position - player.Character.HumanoidRootPart.Position).Magnitude
+
+	-- Time to target (assume constant bullet speed or travel time)
+	local travelTime = distanceToTarget / 50  -- 50 is the bullet travel speed, adjust as needed
+
+	-- Predicted position (using velocity and travel time)
+	local predictedPosition = targetHead.Position + velocity * travelTime * predictionModifier
+	return predictedPosition
+end
+
+-- Function to check if the target is visible (no wall between)
+local function isTargetVisible(targetHead)
+	local ray = Ray.new(player.Character.HumanoidRootPart.Position, targetHead.Position - player.Character.HumanoidRootPart.Position)
+	local hit, position = game.Workspace:FindPartOnRay(ray, player.Character)
+	return hit == nil  -- Return true if no wall hit
+end
+
+-- Function to simulate a left-click for auto fire
+local function simulateLeftClick()
+	local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+	local inputObject = Instance.new("InputObject")
+	inputObject.UserInputType = Enum.UserInputType.MouseButton1
+	inputObject.Position = mouse.Hit.p
+	game:GetService("UserInputService").InputBegan:Fire(inputObject)
+end
+
+-- Toggle functions
+local function toggleAutoFire()
+	autoFireEnabled = not autoFireEnabled
+	sendNotification("Auto Fire", autoFireEnabled and "Enabled" or "Disabled", 2)
+end
+
+local function toggleAimAssist()
+	aimAssistEnabled = not aimAssistEnabled
+	radiusCircle.Visible = aimAssistEnabled  -- Show/hide circle when toggling
+	sendNotification("Aim Assist", aimAssistEnabled and "Enabled" or "Disabled", 2)
+end
+
+local function toggleTeamCheck() 
+	teamCheckEnabled = not teamCheckEnabled 
+	sendNotification("Team Check", teamCheckEnabled and "Enabled" or "Disabled", 2)
+end
+
+local function toggleESP() 
+	espEnabled = not espEnabled
+	sendNotification("ESP", espEnabled and "Enabled" or "Disabled", 2)
+end
+
+local function togglePrediction() 
+	predictionEnabled = not predictionEnabled
+	sendNotification("Prediction", predictionEnabled and "Enabled" or "Disabled", 2)
+end
+
+-- Function to adjust lock radius
+local function adjustLockRadius(amount)
+	lockRadius = math.max(1, lockRadius + amount) -- Prevent radius from going below 1
+	sendNotification("Lock Radius", "New Radius: " .. lockRadius, 2)
+end
+
+-- Function to adjust prediction modifier
+local function adjustPredictionModifier(amount)
+	predictionModifier = math.clamp(predictionModifier + amount, 0, 1)  -- Clamp between 0 and 1
+	sendNotification("Prediction Modifier", "New Modifier: " .. string.format("%.2f", predictionModifier), 2)
+end
+
+-- Function to add/update ESP highlights for a player
+local function updateESPHighlights()
+	for _, otherPlayer in ipairs(game.Players:GetPlayers()) do
+		if otherPlayer == player or not isPlayerAlive(otherPlayer) then continue end
+		if teamCheckEnabled and otherPlayer.Team == player.Team then continue end
+
+		local character = otherPlayer.Character
+		local head = character and character:FindFirstChild("Head")
+		if head then
+			local highlight = highlights[otherPlayer.UserId]
+
+			if espEnabled then
+				if not highlight then
+					highlight = Instance.new("Highlight")
+					highlight.Parent = character
+					highlight.FillColor = Color3.fromRGB(255, 0, 0)
+					highlight.OutlineColor = Color3.fromRGB(0, 0, 0)
+					highlight.OutlineTransparency = 0.5
+					highlights[otherPlayer.UserId] = highlight
+				end
+
+				if aimAssistEnabled and getNearestHead() == head then
+					highlight.FillColor = Color3.fromRGB(0, 255, 0)  -- Green when locked on
+				else
+					highlight.FillColor = Color3.fromRGB(255, 0, 0)  -- Red when not locked on
+				end
+			else
+				if highlight then
+					highlight:Destroy()
+					highlights[otherPlayer.UserId] = nil
+				end
+			end
+		end
+	end
+end
+
+-- Keybinds for toggles and lock radius adjustment
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
+	if gameProcessed then return end
+
+	if input.UserInputType == Enum.UserInputType.Keyboard then
+		-- Toggle Team Check
+		if input.KeyCode == teamToggleKey then
+			toggleTeamCheck()
+			-- Toggle ESP
+		elseif input.KeyCode == espToggleKey then
+			toggleESP()
+			-- Lock radius adjustment with Shift or Alt
+		elseif input.KeyCode == toggleKey then
+			-- Check if Shift or Alt is held down
+			if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftShift) then
+				adjustLockRadius(1)
+			elseif game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftAlt) then
+				adjustLockRadius(-1)
+			else
+				-- Toggle Aim Assist if no modifier key is held down
+				toggleAimAssist()
+			end
+			-- Toggle Prediction
+		elseif input.KeyCode == predictionToggleKey then
+			-- Check if Shift or Alt is held down
+			if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftShift) then
+				adjustPredictionModifier(0.01)
+			elseif game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftAlt) then
+				adjustPredictionModifier(-0.01)
+			else
+				-- Toggle Prediction if no modifier key is held down
+				togglePrediction()
+			end
+		elseif input.KeyCode == autoFireKey then
+			toggleAutoFire()
+		end
+	end
+end)
+
+-- Notify user when the script is loaded
+sendNotification("Script Loaded", "Keybinds:\nH - Toggle Aim Assist (with Shift to Increase | Alt to Decrease)\nJ - Toggle Team Check\nK - Toggle ESP", 5)
+
+sendNotification("Additional Controls", "P - Toggle Prediction\nShift + P - Increase Prediction Modifier\nAlt + P - Decrease Prediction Modifier", 5)
+
+sendNotification("Radius Adjustment", "Shift + H - Increase Lock Radius\nAlt + H - Decrease Lock Radius\n L - AutoFire", 5)
+
+-- Update loop for aim assist, ESP, and radius circle
+game:GetService("RunService").RenderStepped:Connect(function()
+	if aimAssistEnabled then
+		local nearestHead = getNearestHead()
+		if nearestHead then
+			if predictionEnabled then
+				-- Apply prediction when enabled
+				nearestHead.Position = predictTargetPosition(nearestHead, nearestHead.Parent)
+			end
+			if autoFireEnabled then
+				local nearestHead = getNearestHead()
+				if nearestHead and isTargetVisible(nearestHead) then
+					simulateLeftClick()  -- Simulate a left-click to fire
+				end
+			end
+			game.Workspace.CurrentCamera.CFrame = CFrame.new(game.Workspace.CurrentCamera.CFrame.Position, nearestHead.Position)
+			radiusCircle.ImageColor3 = Color3.fromRGB(0, 255, 0)
+		else
+			radiusCircle.ImageColor3 = Color3.fromRGB(255, 0, 0)
+		end
+	end
+
+	radiusCircle.Visible = aimAssistEnabled
+	radiusCircle.Size = UDim2.new(0, lockRadius * 2, 0, lockRadius * 2)
+	radiusCircle.Position = UDim2.new(0, mouse.X - lockRadius, 0, mouse.Y - lockRadius)
+	updateESPHighlights()
+end)
