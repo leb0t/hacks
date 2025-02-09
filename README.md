@@ -8,7 +8,7 @@ loadstring(game:HttpGet(('https://raw.githubusercontent.com/leb0t/hacks/refs/hea
 ```
 
 ## 🔍 ESP (UNIVERSAL)  
-A more advanced ESP with enhanced features, allowing you to see players through walls, display their name.  
+A more advanced ESP with enhanced features, allowing you to see players through walls, display their health, distance, and more.
 
 ```lua
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/leb0t/hacks/refs/heads/main/esp.txt'),true))()
