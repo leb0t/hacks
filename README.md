@@ -1,4 +1,3 @@
-```markdown
 # 🟢 Universal Aim Bot & ESP  
 
 ## 🎯 AIM BOT (UNIVERSAL)  
